@@ -31,27 +31,23 @@
         <input type="checkbox" id="check3">
         <label for="check3">中華</label><br>
         <input type="checkbox" id="check4">
-        <label for="check4">木曜</label><br>
-        <input type="checkbox" id="check5">
-        <label for="check5">金曜</label><br>
-        <input type="checkbox" id="check6">
-        <label for="check6">土曜</label><br>
-        <input type="checkbox" id="check7">
-        <label for="check7">日曜</label><br>
-        <input type="checkbox" id="check8">
-        <label for="check8">祝日</label><br>
       </div>
     </div>
 
     <div class="input">
+      <label for="storename">そのたカテゴリ<span class="require">必須</span></label>
+      <input type="text" name="storename" value="" id="category_sonota">
+    </div>
+
+    <div class="input">
       <label for="">郵便番号<span class="require">必須</span></label>
-      <input type="tel" name="zip01" maxlength="8" value="" placeholder="" required>
+      <input type="tel" name="zip01" maxlength="8" value="" placeholder="" id="addressnum" required>
       <button type="button" class="js-button" href="#">住所検索</button>
     </div>
 
     <div class="input">
       <label for="">都道府県<span class="require">必須</span></label>
-      <select name="address1">
+      <select name="address1" id="prefecture">
         <option value="">選択ください</option>
         <optgroup label="北海道・東北">
           <option value="北海道">北海道</option>
@@ -121,12 +117,12 @@
 
     <div class="input">
       <label for="">市区町村<span class="require">必須</span></label>
-      <input type="text" name="addr01" size="60" placeholder="" required>
+      <input type="text" name="addr01" size="60" placeholder=""id="address2" required>
     </div>
 
     <div class="input">
       <label for="">番地・建物名<span class="require">必須</span></label>
-      <input type="text" name="" value="" placeholder="" required>
+      <input type="text" name="" value="" placeholder="" id="address3" required>
     </div>
 
     <div class="input">
@@ -168,7 +164,7 @@
 
     <div class="input">
       <label for="">電話番号</label>
-      <input type="number" name="" value="" placeholder="" maxlength="17">
+      <input type="tel" name="" value="" placeholder="" maxlength="17">
     </div>
 
     <div class="snswrap">
@@ -371,7 +367,7 @@
 
 
         <h4>Boulangerie HAL</h4>
-        <p class="address_p">住所：<span class="adddress">東京都渋谷区猿楽町29-18</span><br>
+        <p class="address_p">住所：<span class="s_addressnum"></span><span class="s_address"></span><br>
           電話：<span class="tel">03-3344-1010</span><br>
         </p>
         <p>
@@ -413,7 +409,7 @@
 
 
 </body>
-<script type="text/javascript">
+<script type="text/javascript" charset="UTF-8">
   var snscnt = 1;
   var menucnt = 1;
   $('.snspbtn').on('click', function() {
@@ -457,13 +453,56 @@
 
   $(".preview").on('click', function() {
     console.log("くりっくされた");
-    const storename = document.getElementById("storename").value;
+    var storename = document.getElementById("storename").value;
+    var addressnum =document.getElementById("addressnum").value;
+    var prefecture = $('#prefecture').val();
+    var address2 =document.getElementById("address2").value;
+    var address3 =document.getElementById("address3").value;
+
+    //店舗名取得
     if (storename =="") {
-        console.log("記入なし");
+        console.log("店舗名記入なし");
     }
     else{
+        console.log(storename);
   $(".s_storename").text(storename);
     }
+
+      //郵便番号取得
+    if (addressnum =="") {
+        console.log("郵便番号記入なし");
+    }
+    else{
+      console.log(addressnum);
+  $(".s_addressnum").text("〒"+addressnum);
+    }
+
+    //県取得
+  if (prefecture =="") {
+      console.log("県記入なし");
+  }
+  else{
+    //市区町村取得
+    if (address2 =="") {
+        console.log("市区町村記入なし");
+    }
+    else{
+      //番地取得
+      if (address3 =="") {
+          console.log("番地記入なし");
+      }
+      else{
+          $(".s_address").text(prefecture+address2+address3);
+      }
+    }
+
+  }
+
+
+
+
+
+
   })
 
 </script>
