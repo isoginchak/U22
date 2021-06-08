@@ -14,7 +14,7 @@
 
 <body>
   <h1>フォーム作成</h1>
-  <form class="" action="form.html" method="post"　onsubmit="return check();">
+  <form class="" action="form.html" method="post" onsubmit="return check();">
 
     <div class="input">
       <label for="storename">店名<span class="require">必須</span></label>
@@ -117,7 +117,7 @@
 
     <div class="input">
       <label for="">市区町村<span class="require">必須</span></label>
-      <input type="text" name="addr01" size="60" placeholder=""id="address2" required>
+      <input type="text" name="addr01" size="60" placeholder="" id="address2" required>
     </div>
 
     <div class="input">
@@ -127,7 +127,16 @@
 
     <div class="input">
       <label for="">最寄り駅<span class="require">必須</span></label>
-      <input type="text" name="" value="" placeholder="" required>
+      <input type="text" name="" value="" placeholder="" id="eki" required>
+    </div>
+
+    <div class="input">
+
+      <div class="yoko">
+        <label for="">営業時間<span class="require">必須</span></label>
+        <input type="time" name="" value="" placeholder="" id="opentime" required>
+        <p>～</p><input type="time" name="" value="" placeholder="" id="closetime" required>
+      </div>
     </div>
 
     <div class="input">
@@ -159,12 +168,12 @@
 
     <div class="input">
       <label for="">メールアドレス</label>
-      <input type="email" name="" value="" placeholder="">
+      <input type="email" name="" value="" id="mail" placeholder="">
     </div>
 
     <div class="input">
       <label for="">電話番号</label>
-      <input type="tel" name="" value="" placeholder="" maxlength="17">
+      <input type="tel" name="" value="" placeholder="" id="tel"maxlength="17">
     </div>
 
     <div class="snswrap">
@@ -217,13 +226,13 @@
 
     <div class="input">
       <!-- <button type="button" name="button" class="preview">プレビュー</button> -->
-      <input type="submit" name=""class="submit" value="決定">
+      <input type="submit" name="" class="submit" value="決定">
       <button type="button" name="button" class="preview">プレビュー</button>
     </div>
 
   </form>
 
-<div class="sample1">
+  <div class="sample1">
     <!--ヘッダー-->
     <header>
       <div class="full">
@@ -261,25 +270,22 @@
       <nav>
         <div class="nav_img">
           <a href="#">
-          <img src="images/logo01.svg" alt="">
+            <img src="images/logo01.svg" alt="">
           </a>
         </div>
-  <ul>
-    <li class="global-item"><a href="#">HOME</a></li>
-    <li class="global-item"><a href="#menu">MENU</a></li>
-    <li class="global-item"><a href="#news">NEWS</a></li>
-    <li class="global-item"><a href="#address">ADDRESS</a></li>
-  </ul>
-  </nav>
+        <ul>
+          <li class="global-item"><a href="#">HOME</a></li>
+          <li class="global-item"><a href="#menu">MENU</a></li>
+          <li class="global-item"><a href="#news">NEWS</a></li>
+          <li class="global-item"><a href="#address">ADDRESS</a></li>
+        </ul>
+      </nav>
 
     </div>
 
     <div class="clear">
 
     </div>
-
-
-
 
     <!--メニュー-->
     <div class="menu">
@@ -368,15 +374,15 @@
 
         <h4>Boulangerie HAL</h4>
         <p class="address_p">住所：<span class="s_addressnum"></span><span class="s_address"></span><br>
-          電話：<span class="tel">03-3344-1010</span><br>
+          電話：<span class="s_tel"></span><br>
+          メールアドレス：<span class="s_mail"></span><br>
         </p>
         <p>
-          東急東横線［代官山駅］下車　徒歩3分<br>
-          東急東横線・地下鉄日比谷線［中目黒駅］下車 徒歩7分<br>
-          JR山手線・JR埼京線・地下鉄日比谷線［恵比寿駅］下車 徒歩10分<br>
+          <span class="s_eki"></span>
+          <br>
         </p>
         <p>
-          営業時間：10:00～20:00<br>
+          営業時間：<span class="s_time"></span><br>
         </p>
         <p>定休日：</p>
 
@@ -396,15 +402,15 @@
       <p class="small">copyright Boulangerie HAL</p>
       <div class="sns">
         <a href="#">
-        <img src="images/twitter.svg" alt="twitter">
+          <img src="images/twitter.svg" alt="twitter">
         </a>
         <a href="#">
-        <img src="images/insta.svg" alt="insta">
+          <img src="images/insta.svg" alt="insta">
         </a>
       </div>
     </footer>
 
-    </div>
+  </div>
 
 
 
@@ -454,57 +460,81 @@
   $(".preview").on('click', function() {
     console.log("くりっくされた");
     var storename = document.getElementById("storename").value;
-    var addressnum =document.getElementById("addressnum").value;
+    var addressnum = document.getElementById("addressnum").value;
     var prefecture = $('#prefecture').val();
-    var address2 =document.getElementById("address2").value;
-    var address3 =document.getElementById("address3").value;
+    var address2 = document.getElementById("address2").value;
+    var address3 = document.getElementById("address3").value;
+    var eki = document.getElementById("eki").value;
+    var opentime = $('#opentime').val();
+    var closetime = $('#closetime').val();
+    var mail = document.getElementById("mail").value;
+      var tel =document.getElementById("tel").value;
 
     //店舗名取得
-    if (storename =="") {
-        console.log("店舗名記入なし");
-    }
-    else{
-        console.log(storename);
-  $(".s_storename").text(storename);
+    if (storename == "") {
+      console.log("店舗名記入なし");
+    } else {
+      console.log(storename);
+      $(".s_storename").text(storename);
     }
 
-      //郵便番号取得
-    if (addressnum =="") {
-        console.log("郵便番号記入なし");
-    }
-    else{
-      console.log(addressnum);
-  $(".s_addressnum").text("〒"+addressnum);
+    //郵便番号取得
+    if (addressnum == "") {
+      console.log("郵便番号記入なし");
+    } else {
+      $(".s_addressnum").text("〒" + addressnum);
     }
 
     //県取得
-  if (prefecture =="") {
+    if (prefecture == "") {
       console.log("県記入なし");
-  }
-  else{
-    //市区町村取得
-    if (address2 =="") {
+    } else {
+      //市区町村取得
+      if (address2 == "") {
         console.log("市区町村記入なし");
-    }
-    else{
-      //番地取得
-      if (address3 =="") {
+      } else {
+        //番地取得
+        if (address3 == "") {
           console.log("番地記入なし");
-      }
-      else{
-          $(".s_address").text(prefecture+address2+address3);
+        } else {
+          $(".s_address").text(prefecture + address2 + address3);
+        }
       }
     }
 
-  }
+    //駅取得
+    if (eki == "") {
+      console.log("駅記入なし");
+    } else {
+      $(".s_eki").text(eki);
+    }
 
+    //営業時間取得
+    if (opentime == "" || closetime == "") {
+      console.log("営業時間記入なし");
+    } else {
+      $(".s_time").text(opentime + "~" + closetime);
+    }
 
+    //定休日取得　めんどい
 
+    //メールアドレス取得
+    if (mail == "") {
+      console.log("メール記入なし");
+    } else {
+      $(".s_mail").text(mail);
+    }
+
+    //電話番号取得
+    if (tel == "") {
+      console.log("電話番号記入なし");
+    } else {
+      $(".s_tel").text(tel);
+    }
 
 
 
   })
-
 </script>
 
 </html>
