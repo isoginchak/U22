@@ -18,13 +18,13 @@
 
     <div class="input">
       <label for="storename">店名<span class="require">必須</span></label>
-      <input type="text" name="storename" value="" id="storename" required>
+      <input type="text" name="shop_name" value="" id="storename" required>
     </div>
 
     <div class="input">
       <label for="">カテゴリ<span class="require">必須</span></label>
       <div class="week">
-        <input type="checkbox" name="" value="" id="check1">
+        <input type="checkbox" name="category" value="" id="check1">
         <label for="check1">和食</label><br>
         <input type="checkbox" id="check2">
         <label for="check2">洋食</label><br>
@@ -36,18 +36,18 @@
 
     <div class="input">
       <label for="storename">そのたカテゴリ<span class="require">必須</span></label>
-      <input type="text" name="storename" value="" id="category_sonota">
+      <input type="text" name="other_category" value="" id="category_sonota">
     </div>
 
     <div class="input">
       <label for="">郵便番号<span class="require">必須</span></label>
-      <input type="tel" name="zip01" maxlength="8" value="" placeholder="" id="addressnum" required>
+      <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
       <button type="button" class="js-button" href="#">住所検索</button>
     </div>
 
     <div class="input">
       <label for="">都道府県<span class="require">必須</span></label>
-      <select name="address1" id="prefecture">
+      <select name="address_1" id="prefecture">
         <option value="">選択ください</option>
         <optgroup label="北海道・東北">
           <option value="北海道">北海道</option>
@@ -117,32 +117,32 @@
 
     <div class="input">
       <label for="">市区町村<span class="require">必須</span></label>
-      <input type="text" name="addr01" size="60" placeholder="" id="address2" required>
+      <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
     </div>
 
     <div class="input">
       <label for="">番地・建物名<span class="require">必須</span></label>
-      <input type="text" name="" value="" placeholder="" id="address3" required>
+      <input type="text" name="address_3" value="" placeholder="" id="address3" required>
     </div>
 
     <div class="input">
       <label for="">最寄り駅<span class="require">必須</span></label>
-      <input type="text" name="" value="" placeholder="" id="eki" required>
+      <input type="text" name="station" value="" placeholder="" id="eki" required>
     </div>
 
     <div class="input">
 
       <div class="yoko">
         <label for="">営業時間<span class="require">必須</span></label>
-        <input type="time" name="" value="" placeholder="" id="opentime" required>
-        <p>～</p><input type="time" name="" value="" placeholder="" id="closetime" required>
+        <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
+        <p>～</p><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
       </div>
     </div>
 
     <div class="input">
       <label for="">定休日<span class="require">必須</span></label>
       <div class="week">
-        <input type="checkbox" name="" value="" id="check1">
+        <input type="checkbox" name="regular_day_off" value="" id="check1">
         <label for="check1">月曜</label><br>
         <input type="checkbox" id="check2">
         <label for="check2">火曜</label><br>
@@ -163,26 +163,26 @@
 
     <div class="input">
       <label for="">その他の定休日<span class="require">必須</span></label>
-      <input type="text" name="" value="" placeholder="">
+      <input type="text" name="other_regular_day_off" value="" placeholder="">
     </div>
 
     <div class="input">
       <label for="">メールアドレス</label>
-      <input type="email" name="" value="" id="mail" placeholder="">
+      <input type="email" name="mail_address" value="" id="mail" placeholder="">
     </div>
 
     <div class="input">
       <label for="">電話番号</label>
-      <input type="tel" name="" value="" placeholder="" id="tel"maxlength="17">
+      <input type="tel" name="phone_number" value="" placeholder="" id="tel" maxlength="17">
     </div>
 
     <div class="snswrap">
-      <div class="sns_box" id="sns1">
+      <div class="sns_box" id="sns">
         <div class="detail">
           <div class="input">
             <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
             <label for="">SNS</label>
-            <select name="SNS">
+            <select name="sns_category">
               <option value="">選択ください</option>
               <option value="twitter">twitter</option>
               <option value="instagram">instagram</option>
@@ -193,7 +193,7 @@
           </div>
           <div class="input">
             <label for="">SNSのURL</label>
-            <input type="url" name="" value="">
+            <input type="url" name="sns_url[]" value="">
           </div>
         </div>
       </div>
@@ -202,27 +202,51 @@
 
     <div class="menuwrap">
 
-      <div class="menu_box" id="menu1">
+      <div class="menu_box" id="menu">
         <div class="detail">
           <div class="input">
             <label for="">メニュー<span class="require">必須</span></label>
-            <input type="text" name="" value="" placeholder="">
+            <input type="text" name="menu_name[]" value="" placeholder="">
             <button type="button" name="button" class="menumbtn">-</button>
           </div>
 
           <div class="input">
+            <label for="">ロゴの画像</label>
+            <input type="file" name="menu_img[]" value="" id="">
+          </div>
+
+          <div class="input">
             <label for="">値段</label>
-            <input type="number" name="" value="" placeholder="">
+            <input type="number" name="price[]" value="" placeholder="">
           </div>
 
           <div class="input">
             <label for="">説明</label>
-            <input type="text" name="" value="" placeholder="">
+            <input type="text" name="menu_description[]" value="" placeholder="">
           </div>
         </div>
       </div>
       <button type="button" name="button" class="menupbtn">+</button>
     </div>
+
+    <div class="input">
+      <label for="">ロゴの画像</label>
+      <input type="file" name="logo_img" value="" id="">
+    </div>
+
+    <div class="input">
+      <label for="">店内画像</label>
+      <input type="file" name="shop_img[]" value="" id="">
+    </div>
+
+    <div class="input">
+      <label for="">一言コメント</label>
+      <input type="time" name="comment" value="" id="">
+    </div>
+
+
+
+
 
     <div class="input">
       <!-- <button type="button" name="button" class="preview">プレビュー</button> -->
@@ -420,19 +444,20 @@
   var menucnt = 1;
   $('.snspbtn').on('click', function() {
     snscnt++;
-    $("#sns1"). //#each_rootを取得
-    clone(true). //上で取得した中身をコピー
-    find('.detail'). //そのコピーした中身のdetailとついている要素を取得
-    attr('id', "sns" + snscnt). //上で取得した要素の中のidをiとする
-    insertBefore(".snspbtn"); //#rootsに追加
+    if (snscnt == 5) {
+      snscnt--;
+    } else {
+      $("#sns"). //#each_rootを取得
+      clone(true). //上で取得した中身をコピー
+      insertBefore(".snspbtn"); //#rootsに追加
+
+    }
   })
 
   $('.menupbtn').on('click', function() {
     menucnt++;
-    $("#menu1"). //#each_rootを取得
+    $("#menu"). //#each_rootを取得
     clone(true). //上で取得した中身をコピー
-    find('.detail'). //そのコピーした中身のdetailとついている要素を取得
-    attr('id', "menu" + menucnt). //上で取得した要素の中のidをiとする
     insertBefore(".menupbtn"); //#rootsに追加
   })
 
@@ -442,6 +467,7 @@
     var snsdel = $(this).parent().parent()
     if (cnt > 1) {
       snsdel.remove();
+      snscnt--;
     } else {
 
     }
@@ -468,7 +494,7 @@
     var opentime = $('#opentime').val();
     var closetime = $('#closetime').val();
     var mail = document.getElementById("mail").value;
-      var tel =document.getElementById("tel").value;
+    var tel = document.getElementById("tel").value;
 
     //店舗名取得
     if (storename == "") {
