@@ -2,314 +2,311 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <title>フォーム作成</title>
+    <meta charset="utf-8">
+    <title>フォーム作成</title>
 
-  <!-- 住所検索 -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="js/address.js"></script>
+    <!-- 住所検索 -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/address.js"></script>
 </head>
 
 <body>
-  <h1>フォーム作成</h1>
-  <form class="" action="form.html" method="post" onsubmit="return check();">
+<h1>フォーム作成</h1>
+<form class="" action="form.html" method="post" onsubmit="return check();">
 
     <div class="input">
-      <label for="storename">店名<span class="require">必須</span></label>
-      <input type="text" name="shop_name" value="" id="storename" required>
+        <label for="storename">店名<span class="require">必須</span></label>
+        <input type="text" name="shop_name" value="" id="storename" required>
     </div>
 
     <div class="input">
-      <label for="">カテゴリ<span class="require">必須</span></label>
-      <div class="category_wrap">
-        <input type="checkbox" name="category" value="和食" id="check1">
-        <label for="check1">和食</label><br>
-        <input type="checkbox" id="check2" value="洋食" name="category">
-        <label for="check2">洋食</label><br>
-        <input type="checkbox" id="check3" value="中華" name="category">
-        <label for="check3">中華</label><br>
-        <input type="checkbox" id="check4" value="イタリアン" name="category">
-        <label for="check4">イタリアン</label><br>
-        <input type="checkbox" id="check5" value="居酒屋" name="category">
-        <label for="check5">居酒屋</label><br>
-        <input type="checkbox" id="check6" value="麺類" name="category">
-        <label for="check6">麺類</label><br>
-        <input type="checkbox" id="check7" value="カフェ・スイーツ" name="category">
-        <label for="check7">カフェ・スイーツ</label><br>
-        <input type="checkbox" id="check8" value="その他" name="category">
-        <label for="check8">その他</label><br>
+        <label for="">カテゴリ<span class="require">必須</span></label>
+        <div class="category_wrap">
+            <input type="checkbox" name="category" value="和食" id="category_id_1">
+            <label for="category_id_1">和食</label><br>
+            <input type="checkbox" id="category_id_2" value="洋食" name="category">
+            <label for="category_id_2">洋食</label><br>
+            <input type="checkbox" id="category_id_3" value="中華" name="category">
+            <label for="category_id_3">中華</label><br>
+            <input type="checkbox" id="category_id_4" value="イタリアン" name="category">
+            <label for="category_id_4">イタリアン</label><br>
+            <input type="checkbox" id="category_id_5" value="居酒屋" name="category">
+            <label for="category_id_5">居酒屋</label><br>
+            <input type="checkbox" id="category_id_6" value="麺類" name="category">
+            <label for="category_id_6">麺類</label><br>
+            <input type="checkbox" id="category_id_7" value="カフェ・スイーツ" name="category">
+            <label for="category_id_7">カフェ・スイーツ</label><br>
+            <input type="checkbox" id="category_id_8" value="その他" name="category">
+            <label for="category_id_8">その他</label><br>
 
-      </div>
+        </div>
     </div>
 
 
     <div class="input">
-      <label for="">郵便番号<span class="require">必須</span></label>
-      <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
-      <button type="button" class="js-button" href="#">住所検索</button>
+        <label for="">郵便番号<span class="require">必須</span></label>
+        <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
+        <button type="button" class="js-button" href="#">住所検索</button>
     </div>
 
     <div class="input">
-      <label for="">都道府県<span class="require">必須</span></label>
-      <select name="address_1" id="prefecture">
-        <option value="">選択ください</option>
-        <optgroup label="北海道・東北">
-          <option value="北海道">北海道</option>
-          <option value="青森県">青森県</option>
-          <option value="秋田県">秋田県</option>
-          <option value="岩手県">岩手県</option>
-          <option value="山形県">山形県</option>
-          <option value="宮城県">宮城県</option>
-          <option value="福島県">福島県</option>
-        </optgroup>
-        <optgroup label="甲信越・北陸">
-          <option value="山梨県">山梨県</option>
-          <option value="長野県">長野県</option>
-          <option value="新潟県">新潟県</option>
-          <option value="富山県">富山県</option>
-          <option value="石川県">石川県</option>
-          <option value="福井県">福井県</option>
-        </optgroup>
-        <optgroup label="関東">
-          <option value="茨城県">茨城県</option>
-          <option value="栃木県">栃木県</option>
-          <option value="群馬県">群馬県</option>
-          <option value="埼玉県">埼玉県</option>
-          <option value="千葉県">千葉県</option>
-          <option value="東京都">東京都</option>
-          <option value="神奈川県">神奈川県</option>
-        </optgroup>
-        <optgroup label="東海">
-          <option value="愛知県">愛知県</option>
-          <option value="静岡県">静岡県</option>
-          <option value="岐阜県">岐阜県</option>
-          <option value="三重県">三重県</option>
-        </optgroup>
-        <optgroup label="関西">
-          <option value="大阪府">大阪府</option>
-          <option value="兵庫県">兵庫県</option>
-          <option value="京都府">京都府</option>
-          <option value="滋賀県">滋賀県</option>
-          <option value="奈良県">奈良県</option>
-          <option value="和歌山県">和歌山県</option>
-        </optgroup>
-        <optgroup label="中国">
-          <option value="岡山県">岡山県</option>
-          <option value="広島県">広島県</option>
-          <option value="鳥取県">鳥取県</option>
-          <option value="島根県">島根県</option>
-          <option value="山口県">山口県</option>
-        </optgroup>
-        <optgroup label="四国">
-          <option value="徳島県">徳島県</option>
-          <option value="香川県">香川県</option>
-          <option value="愛媛県">愛媛県</option>
-          <option value="高知県">高知県</option>
-        </optgroup>
-        <optgroup label="九州・沖縄">
-          <option value="福岡県">福岡県</option>
-          <option value="佐賀県">佐賀県</option>
-          <option value="長崎県">長崎県</option>
-          <option value="熊本県">熊本県</option>
-          <option value="大分県">大分県</option>
-          <option value="宮崎県">宮崎県</option>
-          <option value="鹿児島県">鹿児島県</option>
-          <option value="沖縄県">沖縄県</option>
-        </optgroup>
-      </select>
+        <label for="">都道府県<span class="require">必須</span></label>
+        <select name="address_1" id="prefecture">
+            <option value="">選択ください</option>
+            <optgroup label="北海道・東北">
+                <option value="北海道">北海道</option>
+                <option value="青森県">青森県</option>
+                <option value="秋田県">秋田県</option>
+                <option value="岩手県">岩手県</option>
+                <option value="山形県">山形県</option>
+                <option value="宮城県">宮城県</option>
+                <option value="福島県">福島県</option>
+            </optgroup>
+            <optgroup label="甲信越・北陸">
+                <option value="山梨県">山梨県</option>
+                <option value="長野県">長野県</option>
+                <option value="新潟県">新潟県</option>
+                <option value="富山県">富山県</option>
+                <option value="石川県">石川県</option>
+                <option value="福井県">福井県</option>
+            </optgroup>
+            <optgroup label="関東">
+                <option value="茨城県">茨城県</option>
+                <option value="栃木県">栃木県</option>
+                <option value="群馬県">群馬県</option>
+                <option value="埼玉県">埼玉県</option>
+                <option value="千葉県">千葉県</option>
+                <option value="東京都">東京都</option>
+                <option value="神奈川県">神奈川県</option>
+            </optgroup>
+            <optgroup label="東海">
+                <option value="愛知県">愛知県</option>
+                <option value="静岡県">静岡県</option>
+                <option value="岐阜県">岐阜県</option>
+                <option value="三重県">三重県</option>
+            </optgroup>
+            <optgroup label="関西">
+                <option value="大阪府">大阪府</option>
+                <option value="兵庫県">兵庫県</option>
+                <option value="京都府">京都府</option>
+                <option value="滋賀県">滋賀県</option>
+                <option value="奈良県">奈良県</option>
+                <option value="和歌山県">和歌山県</option>
+            </optgroup>
+            <optgroup label="中国">
+                <option value="岡山県">岡山県</option>
+                <option value="広島県">広島県</option>
+                <option value="鳥取県">鳥取県</option>
+                <option value="島根県">島根県</option>
+                <option value="山口県">山口県</option>
+            </optgroup>
+            <optgroup label="四国">
+                <option value="徳島県">徳島県</option>
+                <option value="香川県">香川県</option>
+                <option value="愛媛県">愛媛県</option>
+                <option value="高知県">高知県</option>
+            </optgroup>
+            <optgroup label="九州・沖縄">
+                <option value="福岡県">福岡県</option>
+                <option value="佐賀県">佐賀県</option>
+                <option value="長崎県">長崎県</option>
+                <option value="熊本県">熊本県</option>
+                <option value="大分県">大分県</option>
+                <option value="宮崎県">宮崎県</option>
+                <option value="鹿児島県">鹿児島県</option>
+                <option value="沖縄県">沖縄県</option>
+            </optgroup>
+        </select>
     </div>
 
     <div class="input">
-      <label for="">市区町村<span class="require">必須</span></label>
-      <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
+        <label for="">市区町村<span class="require">必須</span></label>
+        <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
     </div>
 
     <div class="input">
-      <label for="">番地・建物名<span class="require">必須</span></label>
-      <input type="text" name="address_3" value="" placeholder="" id="address3" required>
+        <label for="">番地・建物名<span class="require">必須</span></label>
+        <input type="text" name="address_3" value="" placeholder="" id="address3" required>
     </div>
 
     <div class="input">
-      <label for="">最寄り駅<span class="require">必須</span></label>
-      <input type="text" name="station" value="" placeholder="" id="eki" required>
+        <label for="">最寄り駅<span class="require">必須</span></label>
+        <input type="text" name="station" value="" placeholder="" id="eki" required>
     </div>
 
     <div class="input">
 
-      <div class="yoko">
-        <label for="">営業時間<span class="require">必須</span></label>
-        <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
-        <p>～</p><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
-      </div>
+        <div class="yoko">
+            <label for="">営業時間<span class="require">必須</span></label>
+            <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
+            <p>～</p><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
+        </div>
     </div>
 
     <div class="input">
-      <label for="">定休日<span class="require">必須</span></label>
-      <div class="week">
-        <input type="checkbox" name="regular_day_off" value="" id="check1">
-        <label for="check1">月曜</label><br>
-        <input type="checkbox" id="check2">
-        <label for="check2">火曜</label><br>
-        <input type="checkbox" id="check3">
-        <label for="check3">水曜</label><br>
-        <input type="checkbox" id="check4">
-        <label for="check4">木曜</label><br>
-        <input type="checkbox" id="check5">
-        <label for="check5">金曜</label><br>
-        <input type="checkbox" id="check6">
-        <label for="check6">土曜</label><br>
-        <input type="checkbox" id="check7">
-        <label for="check7">日曜</label><br>
-        <input type="checkbox" id="check8">
-        <label for="check8">祝日</label><br>
-      </div>
+        <label for="">定休日<span class="require">必須</span></label>
+        <div class="week">
+            <input type="checkbox" name="regular_day_off" value="" id="check1">
+            <label for="check1">月曜</label><br>
+            <input type="checkbox" id="check2">
+            <label for="check2">火曜</label><br>
+            <input type="checkbox" id="check3">
+            <label for="check3">水曜</label><br>
+            <input type="checkbox" id="check4">
+            <label for="check4">木曜</label><br>
+            <input type="checkbox" id="check5">
+            <label for="check5">金曜</label><br>
+            <input type="checkbox" id="check6">
+            <label for="check6">土曜</label><br>
+            <input type="checkbox" id="check7">
+            <label for="check7">日曜</label><br>
+            <input type="checkbox" id="check8">
+            <label for="check8">祝日</label><br>
+        </div>
     </div>
 
     <div class="input">
-      <label for="">その他の定休日<span class="require">必須</span></label>
-      <input type="text" name="other_regular_day_off" value="" placeholder="">
+        <label for="">その他の定休日<span class="require">必須</span></label>
+        <input type="text" name="other_regular_day_off" value="" placeholder="">
     </div>
 
     <div class="input">
-      <label for="">メールアドレス</label>
-      <input type="email" name="mail_address" value="" id="mail" placeholder="">
+        <label for="">メールアドレス</label>
+        <input type="email" name="mail_address" value="" id="mail" placeholder="">
     </div>
 
     <div class="input">
-      <label for="">電話番号</label>
-      <input type="tel" name="phone_number" value="" placeholder="" id="tel" maxlength="17">
+        <label for="">電話番号</label>
+        <input type="tel" name="phone_number" value="" placeholder="" id="tel" maxlength="17">
     </div>
 
     <div class="snswrap">
-      <div class="sns_box" id="sns">
-        <div class="detail">
-          <div class="input">
-            <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
-            <label for="">SNS</label>
-            <select name="sns_category">
-              <option value="">選択ください</option>
-              <option value="twitter">twitter</option>
-              <option value="instagram">instagram</option>
-              <option value="facebook">facebook</option>
-              <option value="youtube">youtube</option>
-            </select>
-            <button type="button" name="button" class="snsmbtn">-</button>
-          </div>
-          <div class="input">
-            <label for="">SNSのURL</label>
-            <input type="url" name="sns_url[]" value="">
-          </div>
+        <div class="sns_box" id="sns">
+            <div class="detail">
+                <div class="input">
+                    <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
+                    <label for="">SNS</label>
+                    <select name="sns_category">
+                        <option value="">選択ください</option>
+                        <option value="twitter">twitter</option>
+                        <option value="instagram">instagram</option>
+                        <option value="facebook">facebook</option>
+                        <option value="youtube">youtube</option>
+                    </select>
+                    <button type="button" name="button" class="snsmbtn">-</button>
+                </div>
+                <div class="input">
+                    <label for="">SNSのURL</label>
+                    <input type="url" name="sns_url[]" value="">
+                </div>
+            </div>
         </div>
-      </div>
-      <button type="button" name="button" class="snspbtn">+</button>
+        <button type="button" name="button" class="snspbtn">+</button>
     </div>
 
     <div class="menuwrap">
 
-      <div class="menu_box" id="menu">
-        <div class="detail">
-          <div class="input">
-            <label for="">メニュー<span class="require">必須</span></label>
-            <input type="text" name="menu_name[]" value="" placeholder="">
-            <button type="button" name="button" class="menumbtn">-</button>
-          </div>
+        <div class="menu_box" id="menu">
+            <div class="detail">
+                <div class="input">
+                    <label for="">メニュー<span class="require">必須</span></label>
+                    <input type="text" name="menu_name[]" value="" placeholder="">
+                    <button type="button" name="button" class="menumbtn">-</button>
+                </div>
 
-          <div class="input">
-            <label for="">ロゴの画像</label>
-            <input type="file" name="menu_img[]" value="" id="">
-          </div>
+                <div class="input">
+                    <label for="">ロゴの画像</label>
+                    <input type="file" name="menu_img[]" value="" id="">
+                </div>
 
-          <div class="input">
-            <label for="">値段</label>
-            <input type="number" name="price[]" value="" placeholder="">
-          </div>
+                <div class="input">
+                    <label for="">値段</label>
+                    <input type="number" name="price[]" value="" placeholder="">
+                </div>
 
-          <div class="input">
-            <label for="">説明</label>
-            <input type="text" name="menu_description[]" value="" placeholder="">
-          </div>
+                <div class="input">
+                    <label for="">説明</label>
+                    <input type="text" name="menu_description[]" value="" placeholder="">
+                </div>
+            </div>
         </div>
-      </div>
-      <button type="button" name="button" class="menupbtn">+</button>
+        <button type="button" name="button" class="menupbtn">+</button>
     </div>
 
     <div class="input">
-      <label for="">ロゴの画像</label>
-      <input type="file" name="logo_img" value="" id="">
+        <label for="">ロゴの画像</label>
+        <input type="file" name="logo_img" value="" id="">
     </div>
 
     <div class="input">
-      <label for="">店内画像</label>
-      <input type="file" name="shop_img[]" value="" id="">
+        <label for="">店内画像</label>
+        <input type="file" name="shop_img[]" value="" id="">
     </div>
 
     <div class="input">
-      <label for="">一言コメント</label>
-      <input type="text" name="comment" value="" id="">
+        <label for="">一言コメント</label>
+        <input type="text" name="comment" value="" id="">
     </div>
-
-
-
 
 
     <div class="input">
-      <!-- <button type="button" name="button" class="preview">プレビュー</button> -->
-      <input type="submit" name="" class="submit" value="決定">
-      <button type="button" name="button" class="preview">プレビュー</button>
+        <!-- <button type="button" name="button" class="preview">プレビュー</button> -->
+        <input type="submit" name="" class="submit" value="決定">
+        <button type="button" name="button" class="preview">プレビュー</button>
     </div>
 
-  </form>
+</form>
 
-  <div class="sample1">
+<div class="sample1">
     <!--ヘッダー-->
     <header>
-      <div class="full">
-        <div class="img01"></div>
-        <div class="img02"></div>
-        <div class="img03"></div>
-      </div>
-      <div class="logo">
-        <h1 class="s_storename">
+        <div class="full">
+            <div class="img01"></div>
+            <div class="img02"></div>
+            <div class="img03"></div>
+        </div>
+        <div class="logo">
+            <h1 class="s_storename">
 
-        </h1>
-      </div>
-      <p class="tate">日常に寄り添った<br>美味しいパンを<br>お届けします。</p>
-      <a href="#menu">
-        <table class="header_table">
-          <tr>
-            <td>最新のメニューは<br>こちらから</td>
-            <th>MENU</th>
-          </tr>
-        </table>
-      </a>
-      <div id="ticKer">
-        <ul id="ulArea">
-          <!-- ul要素 箇条書き,リスト -->
-          <li><a href="#news">[2020.11.30]オーベルニュ地方フェアを開催</a></li>
-          <li><a href="#news">[2020.11.16]オレンジを使用した季節限定デザートを販売</a></li>
-          <li><a href="#news">[2020.11.08]ブルーチーズを使ったフェア限定商品を販売</a></li>
-        </ul>
-      </div>
+            </h1>
+        </div>
+        <p class="tate">日常に寄り添った<br>美味しいパンを<br>お届けします。</p>
+        <a href="#menu">
+            <table class="header_table">
+                <tr>
+                    <td>最新のメニューは<br>こちらから</td>
+                    <th>MENU</th>
+                </tr>
+            </table>
+        </a>
+        <div id="ticKer">
+            <ul id="ulArea">
+                <!-- ul要素 箇条書き,リスト -->
+                <li><a href="#news">[2020.11.30]オーベルニュ地方フェアを開催</a></li>
+                <li><a href="#news">[2020.11.16]オレンジを使用した季節限定デザートを販売</a></li>
+                <li><a href="#news">[2020.11.08]ブルーチーズを使ったフェア限定商品を販売</a></li>
+            </ul>
+        </div>
     </header>
 
 
     <!--ナビゲーション-->
     <div class="nav">
-      <nav>
-        <div class="nav_img">
-          <a href="#">
-            <img src="images/logo01.svg" alt="">
-          </a>
-        </div>
-        <ul>
-          <li class="global-item"><a href="#">HOME</a></li>
-          <li class="global-item"><a href="#menu">MENU</a></li>
-          <li class="global-item"><a href="#news">NEWS</a></li>
-          <li class="global-item"><a href="#address">ADDRESS</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="nav_img">
+                <a href="#">
+                    <img src="images/logo01.svg" alt="">
+                </a>
+            </div>
+            <ul>
+                <li class="global-item"><a href="#">HOME</a></li>
+                <li class="global-item"><a href="#menu">MENU</a></li>
+                <li class="global-item"><a href="#news">NEWS</a></li>
+                <li class="global-item"><a href="#address">ADDRESS</a></li>
+            </ul>
+        </nav>
 
     </div>
 
@@ -319,254 +316,257 @@
 
     <!--メニュー-->
     <div class="menu">
-      <div class="h2" id="menu">
-        <h2>MENU</h2>
-      </div>
-      <div class="menu_image fadein">
-        <img src="images/tenpo05.jpg" alt="フランスパン" class="menuimage">
-      </div>
-      <ul>
+        <div class="h2" id="menu">
+            <h2>MENU</h2>
+        </div>
+        <div class="menu_image fadein">
+            <img src="images/tenpo05.jpg" alt="フランスパン" class="menuimage">
+        </div>
+        <ul>
 
-        <li class="fadein">
-          <a href="images/pain001.jpg" rel="lightbox" title="フワス　ヴェルヴェンヌ"><img src="images/pain001.jpg" alt=""></a>
-          <h3>フワス　ヴェルヴェンヌ</h3>
-          <p>オーベルニュ地方の名産ハーブ「ヴェルヴェンヌ」にオレンジ、<br>レモンを合わせ　香り高いブリオッシュに仕上げています。</p>
-        </li>
+            <li class="fadein">
+                <a href="images/pain001.jpg" rel="lightbox" title="フワス　ヴェルヴェンヌ"><img src="images/pain001.jpg"
+                                                                                     alt=""></a>
+                <h3>フワス　ヴェルヴェンヌ</h3>
+                <p>オーベルニュ地方の名産ハーブ「ヴェルヴェンヌ」にオレンジ、<br>レモンを合わせ　香り高いブリオッシュに仕上げています。</p>
+            </li>
 
-        <li class="fadein">
-          <a href="images/pain002.jpg" rel="lightbox" title="ローストビーフとフルムダンベールチーズのサンドイッチ"><img src="images/pain002.jpg" alt=""></a>
-          <h3>ローストビーフとフルムダンベールチーズの<br>サンドイッチ</h3>
-          <p>名産フルムダンベールチーズを使った濃厚でクリーミーなソースに<br>ローストビーフを合わせたサンドイッチです。<br>林檎を添えて爽やかに仕上げています。</p>
-        </li>
+            <li class="fadein">
+                <a href="images/pain002.jpg" rel="lightbox" title="ローストビーフとフルムダンベールチーズのサンドイッチ"><img
+                        src="images/pain002.jpg" alt=""></a>
+                <h3>ローストビーフとフルムダンベールチーズの<br>サンドイッチ</h3>
+                <p>名産フルムダンベールチーズを使った濃厚でクリーミーなソースに<br>ローストビーフを合わせたサンドイッチです。<br>林檎を添えて爽やかに仕上げています。</p>
+            </li>
 
-        <li class="fadein">
-          <a href="images/pain003.jpg" rel="lightbox" title="ソーセージとレンズ豆のタルティーヌ"><img src="images/pain003.jpg" alt=""></a>
-          <h3>ソーセージとレンズ豆のタルティーヌ</h3>
-          <p>レンズ豆と相性の良い、ソーセージとマッシュポテトをのせた<br>ボリューム満点のタルティーヌです。</p>
-        </li>
+            <li class="fadein">
+                <a href="images/pain003.jpg" rel="lightbox" title="ソーセージとレンズ豆のタルティーヌ"><img src="images/pain003.jpg"
+                                                                                           alt=""></a>
+                <h3>ソーセージとレンズ豆のタルティーヌ</h3>
+                <p>レンズ豆と相性の良い、ソーセージとマッシュポテトをのせた<br>ボリューム満点のタルティーヌです。</p>
+            </li>
 
-        <li class="fadein">
-          <a href="images/pain004.jpg" rel="lightbox" title="塩豚とルピュイ産レンズ豆煮込みのパイ"><img src="images/pain004.jpg" alt=""></a>
-          <h3>塩豚とルピュイ産レンズ豆煮込みのパイ</h3>
-          <p>オーベルニュ地方ルピュイ名産のレンズ豆を塩豚・ベーコン・香味野菜と煮込む郷土料理のパイです。<br>塩豚の旨みを吸収したレンズ豆をパイで包んで焼き上げています。</p>
-        </li>
+            <li class="fadein">
+                <a href="images/pain004.jpg" rel="lightbox" title="塩豚とルピュイ産レンズ豆煮込みのパイ"><img src="images/pain004.jpg"
+                                                                                            alt=""></a>
+                <h3>塩豚とルピュイ産レンズ豆煮込みのパイ</h3>
+                <p>オーベルニュ地方ルピュイ名産のレンズ豆を塩豚・ベーコン・香味野菜と煮込む郷土料理のパイです。<br>塩豚の旨みを吸収したレンズ豆をパイで包んで焼き上げています。</p>
+            </li>
 
-        <li class="fadein">
-          <a href="images/pain005.jpg" rel="lightbox" title="ケークサレ"><img src="images/pain005.jpg" alt=""></a>
-          <h3>ケークサレ</h3>
-          <p>昔からある郷土料理です。スイスチャード（葉野菜)を生地に<br>練り込みベーコンとプルーンを加えた甘塩っぱいケークサレです。</p>
-        </li>
+            <li class="fadein">
+                <a href="images/pain005.jpg" rel="lightbox" title="ケークサレ"><img src="images/pain005.jpg" alt=""></a>
+                <h3>ケークサレ</h3>
+                <p>昔からある郷土料理です。スイスチャード（葉野菜)を生地に<br>練り込みベーコンとプルーンを加えた甘塩っぱいケークサレです。</p>
+            </li>
 
-        <li class="fadein">
-          <a href="images/pain006.jpg" rel="lightbox" title="郷土料理「トリュファード」のクロワッサン"><img src="images/pain006.jpg" alt=""></a>
-          <h3>郷土料理「トリュファード」のクロワッサン</h3>
-          <p>ジャガイモ、玉ねぎ、スモークベーコンを名産トムフレッシュチーズと炒める郷土料理「トリュファード」をクロワッサン生地に合わせて<br>香ばしく仕上げています。</p>
-        </li>
-      </ul>
+            <li class="fadein">
+                <a href="images/pain006.jpg" rel="lightbox" title="郷土料理「トリュファード」のクロワッサン"><img src="images/pain006.jpg"
+                                                                                              alt=""></a>
+                <h3>郷土料理「トリュファード」のクロワッサン</h3>
+                <p>ジャガイモ、玉ねぎ、スモークベーコンを名産トムフレッシュチーズと炒める郷土料理「トリュファード」をクロワッサン生地に合わせて<br>香ばしく仕上げています。</p>
+            </li>
+        </ul>
     </div>
 
     <!--新着情報-->
     <!--  メニューの上の方がいいのかも -->
     <div class="news">
-      <div class="h2" id="news">
-        <h2>NEWS</h2>
-      </div>
-      <table class="fadein">
-        <tr>
-          <th>2020.11.30</th>
-          <td>名産ブルーチーズ「フルム・ダンベール」を使ったパンや郷土料理をアレンジした惣菜パンなど、フェア限定商品をご用意しております。</td>
-        </tr>
-        <tr>
-          <th>2020.11.16</th>
-          <td>ご好評いただいております、デザートに、季節限定でオレンジを使用したデザートが加わります。</td>
-        </tr>
-        <tr>
+        <div class="h2" id="news">
+            <h2>NEWS</h2>
+        </div>
+        <table class="fadein">
+            <tr>
+                <th>2020.11.30</th>
+                <td>名産ブルーチーズ「フルム・ダンベール」を使ったパンや郷土料理をアレンジした惣菜パンなど、フェア限定商品をご用意しております。</td>
+            </tr>
+            <tr>
+                <th>2020.11.16</th>
+                <td>ご好評いただいております、デザートに、季節限定でオレンジを使用したデザートが加わります。</td>
+            </tr>
+            <tr>
 
-          <th>2020.11.8</th>
-          <td>フランス　オーベルニュ地方の伝統パンや郷土料理の惣菜パンなどを販売するオーベルニュ地方フェアを開催いたします。</td>
-        </tr>
-      </table>
+                <th>2020.11.8</th>
+                <td>フランス　オーベルニュ地方の伝統パンや郷土料理の惣菜パンなどを販売するオーベルニュ地方フェアを開催いたします。</td>
+            </tr>
+        </table>
 
     </div>
 
 
     <!--アドレス-->
     <div class="address">
-      <div class="h2" id="address">
-        <h2>ADDRESS</h2>
-      </div>
+        <div class="h2" id="address">
+            <h2>ADDRESS</h2>
+        </div>
 
-      <div class="address_image fadein">
-        <img src="images/image3.jpg" alt="店内写真" class="addressimage">
-      </div>
-      <div class="address_content fadein">
+        <div class="address_image fadein">
+            <img src="images/image3.jpg" alt="店内写真" class="addressimage">
+        </div>
+        <div class="address_content fadein">
 
 
-        <h4>Boulangerie HAL</h4>
-        <p class="address_p">住所：<span class="s_addressnum"></span><span class="s_address"></span><br>
-          電話：<span class="s_tel"></span><br>
-          メールアドレス：<span class="s_mail"></span><br>
-        </p>
-        <p>
-          <span class="s_eki"></span>
-          <br>
-        </p>
-        <p>
-          営業時間：<span class="s_time"></span><br>
-        </p>
-        <p>定休日：</p>
+            <h4>Boulangerie HAL</h4>
+            <p class="address_p">住所：<span class="s_addressnum"></span><span class="s_address"></span><br>
+                電話：<span class="s_tel"></span><br>
+                メールアドレス：<span class="s_mail"></span><br>
+            </p>
+            <p>
+                <span class="s_eki"></span>
+                <br>
+            </p>
+            <p>
+                営業時間：<span class="s_time"></span><br>
+            </p>
+            <p>定休日：</p>
 
-      </div>
-      <div class="map_img fadein">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.0908729024638!2d139.69964074330827!3d35.64789358540413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b45f5311ed1%3A0x12987f54caa1ee65!2z44CSMTUwLTAwMzMg5p2x5Lqs6YO95riL6LC35Yy654y_5qW955S677yS77yZ4oiS77yR77yY!5e0!3m2!1sja!2sjp!4v1433666443406"
-          width="470" height="300" frameborder="0" style="border:0"></iframe>
-      </div>
+        </div>
+        <div class="map_img fadein">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.0908729024638!2d139.69964074330827!3d35.64789358540413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b45f5311ed1%3A0x12987f54caa1ee65!2z44CSMTUwLTAwMzMg5p2x5Lqs6YO95riL6LC35Yy654y_5qW955S677yS77yZ4oiS77yR77yY!5e0!3m2!1sja!2sjp!4v1433666443406"
+                    width="470" height="300" frameborder="0" style="border:0"></iframe>
+        </div>
     </div>
 
     <!--フッター-->
     <footer class="footer">
-      <div class="top">
-        <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
-      </div>
-      <p class="small">copyright Boulangerie HAL</p>
-      <div class="sns">
-        <a href="#">
-          <img src="images/twitter.svg" alt="twitter">
-        </a>
-        <a href="#">
-          <img src="images/insta.svg" alt="insta">
-        </a>
-      </div>
+        <div class="top">
+            <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
+        </div>
+        <p class="small">copyright Boulangerie HAL</p>
+        <div class="sns">
+            <a href="#">
+                <img src="images/twitter.svg" alt="twitter">
+            </a>
+            <a href="#">
+                <img src="images/insta.svg" alt="insta">
+            </a>
+        </div>
     </footer>
 
-  </div>
-
+</div>
 
 
 </body>
 <script type="text/javascript" charset="UTF-8">
-  var snscnt = 1;
-  var menucnt = 1;
-  $('.snspbtn').on('click', function() {
-    snscnt++;
-    if (snscnt == 5) {
-      snscnt--;
-    } else {
-      $("#sns"). //#each_rootを取得
-      clone(true). //上で取得した中身をコピー
-      insertBefore(".snspbtn"); //#rootsに追加
-
-    }
-  })
-
-  $('.menupbtn').on('click', function() {
-    menucnt++;
-    $("#menu"). //#each_rootを取得
-    clone(true). //上で取得した中身をコピー
-    insertBefore(".menupbtn"); //#rootsに追加
-  })
-
-
-  $(".snsmbtn").on("click", function() {
-    var cnt = $(".snswrap").find('.detail').length;
-    var snsdel = $(this).parent().parent()
-    if (cnt > 1) {
-      snsdel.remove();
-      snscnt--;
-    } else {
-
-    }
-  });
-
-  $(".menumbtn").on("click", function() {
-    var cnt = $(".menuwrap").find('.detail').length;
-    var menudel = $(this).parent().parent()
-    if (cnt > 1) {
-      menudel.remove();
-    } else {
-
-    }
-  });
-
-  $(".preview").on('click', function() {
-    console.log("くりっくされた");
-    var storename = document.getElementById("storename").value;
-    var addressnum = document.getElementById("addressnum").value;
-    var prefecture = $('#prefecture').val();
-    var address2 = document.getElementById("address2").value;
-    var address3 = document.getElementById("address3").value;
-    var eki = document.getElementById("eki").value;
-    var opentime = $('#opentime').val();
-    var closetime = $('#closetime').val();
-    var mail = document.getElementById("mail").value;
-    var tel = document.getElementById("tel").value;
-
-    //店舗名取得
-    if (storename == "") {
-      console.log("店舗名記入なし");
-    } else {
-      console.log(storename);
-      $(".s_storename").text(storename);
-    }
-
-    //郵便番号取得
-    if (addressnum == "") {
-      console.log("郵便番号記入なし");
-    } else {
-      $(".s_addressnum").text("〒" + addressnum);
-    }
-
-    //県取得
-    if (prefecture == "") {
-      console.log("県記入なし");
-    } else {
-      //市区町村取得
-      if (address2 == "") {
-        console.log("市区町村記入なし");
-      } else {
-        //番地取得
-        if (address3 == "") {
-          console.log("番地記入なし");
+    var snscnt = 1;
+    var menucnt = 1;
+    $('.snspbtn').on('click', function () {
+        snscnt++;
+        if (snscnt == 5) {
+            snscnt--;
         } else {
-          $(".s_address").text(prefecture + address2 + address3);
+            $("#sns"). //#each_rootを取得
+                clone(true). //上で取得した中身をコピー
+                insertBefore(".snspbtn"); //#rootsに追加
+
         }
-      }
-    }
+    })
 
-    //駅取得
-    if (eki == "") {
-      console.log("駅記入なし");
-    } else {
-      $(".s_eki").text(eki);
-    }
-
-    //営業時間取得
-    if (opentime == "" || closetime == "") {
-      console.log("営業時間記入なし");
-    } else {
-      $(".s_time").text(opentime + "~" + closetime);
-    }
-
-    //定休日取得　めんどい
-
-    //メールアドレス取得
-    if (mail == "") {
-      console.log("メール記入なし");
-    } else {
-      $(".s_mail").text(mail);
-    }
-
-    //電話番号取得
-    if (tel == "") {
-      console.log("電話番号記入なし");
-    } else {
-      $(".s_tel").text(tel);
-    }
+    $('.menupbtn').on('click', function () {
+        menucnt++;
+        $("#menu"). //#each_rootを取得
+            clone(true). //上で取得した中身をコピー
+            insertBefore(".menupbtn"); //#rootsに追加
+    })
 
 
+    $(".snsmbtn").on("click", function () {
+        var cnt = $(".snswrap").find('.detail').length;
+        var snsdel = $(this).parent().parent()
+        if (cnt > 1) {
+            snsdel.remove();
+            snscnt--;
+        } else {
 
-  })
+        }
+    });
+
+    $(".menumbtn").on("click", function () {
+        var cnt = $(".menuwrap").find('.detail').length;
+        var menudel = $(this).parent().parent()
+        if (cnt > 1) {
+            menudel.remove();
+        } else {
+
+        }
+    });
+
+    $(".preview").on('click', function () {
+        console.log("くりっくされた");
+        var storename = document.getElementById("storename").value;
+        var addressnum = document.getElementById("addressnum").value;
+        var prefecture = $('#prefecture').val();
+        var address2 = document.getElementById("address2").value;
+        var address3 = document.getElementById("address3").value;
+        var eki = document.getElementById("eki").value;
+        var opentime = $('#opentime').val();
+        var closetime = $('#closetime').val();
+        var mail = document.getElementById("mail").value;
+        var tel = document.getElementById("tel").value;
+
+        //店舗名取得
+        if (storename == "") {
+            console.log("店舗名記入なし");
+        } else {
+            console.log(storename);
+            $(".s_storename").text(storename);
+        }
+
+        //郵便番号取得
+        if (addressnum == "") {
+            console.log("郵便番号記入なし");
+        } else {
+            $(".s_addressnum").text("〒" + addressnum);
+        }
+
+        //県取得
+        if (prefecture == "") {
+            console.log("県記入なし");
+        } else {
+            //市区町村取得
+            if (address2 == "") {
+                console.log("市区町村記入なし");
+            } else {
+                //番地取得
+                if (address3 == "") {
+                    console.log("番地記入なし");
+                } else {
+                    $(".s_address").text(prefecture + address2 + address3);
+                }
+            }
+        }
+
+        //駅取得
+        if (eki == "") {
+            console.log("駅記入なし");
+        } else {
+            $(".s_eki").text(eki);
+        }
+
+        //営業時間取得
+        if (opentime == "" || closetime == "") {
+            console.log("営業時間記入なし");
+        } else {
+            $(".s_time").text(opentime + "~" + closetime);
+        }
+
+        //定休日取得　めんどい
+
+        //メールアドレス取得
+        if (mail == "") {
+            console.log("メール記入なし");
+        } else {
+            $(".s_mail").text(mail);
+        }
+
+        //電話番号取得
+        if (tel == "") {
+            console.log("電話番号記入なし");
+        } else {
+            $(".s_tel").text(tel);
+        }
+
+
+    })
 </script>
 
 </html>
