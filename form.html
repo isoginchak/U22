@@ -46,13 +46,13 @@
 
 
     <div class="input">
-        <label for="">郵便番号<span class="require">必須</span></label>
+        <label for="addressnum">郵便番号<span class="require">必須</span></label>
         <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
         <button type="button" class="js-button" href="#">住所検索</button>
     </div>
 
     <div class="input">
-        <label for="">都道府県<span class="require">必須</span></label>
+        <label for="prefecture">都道府県<span class="require">必須</span></label>
         <select name="address_1" id="prefecture">
             <option disabled selected>選択してください</option>
             <optgroup label="北海道・東北">
@@ -122,12 +122,12 @@
     </div>
 
     <div class="input">
-        <label for="">市区町村<span class="require">必須</span></label>
+        <label for="address2">市区町村<span class="require">必須</span></label>
         <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
     </div>
 
     <div class="input">
-        <label for="">番地・建物名<span class="require">必須</span></label>
+        <label for="address3">番地・建物名<span class="require">必須</span></label>
         <input type="text" name="address_3" value="" placeholder="" id="address3" required>
     </div>
 
@@ -193,8 +193,8 @@
             <div class="detail">
                 <div class="input">
                     <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
-                    <label for="">SNS</label>
-                    <select name="sns_category">
+                    <label for="sns_category">SNS</label>
+                    <select id="sns_category" name="sns_category">
                         <option value="">選択ください</option>
                         <option value="twitter">twitter</option>
                         <option value="instagram">instagram</option>
