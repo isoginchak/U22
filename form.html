@@ -46,15 +46,15 @@
 
 
     <div class="input">
-        <label for="">郵便番号<span class="require">必須</span></label>
+        <label for="addressnum">郵便番号<span class="require">必須</span></label>
         <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
         <button type="button" class="js-button" href="#">住所検索</button>
     </div>
 
     <div class="input">
-        <label for="">都道府県<span class="require">必須</span></label>
+        <label for="prefecture">都道府県<span class="require">必須</span></label>
         <select name="address_1" id="prefecture">
-            <option value="">選択ください</option>
+            <option disabled selected>選択してください</option>
             <optgroup label="北海道・東北">
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
@@ -122,22 +122,21 @@
     </div>
 
     <div class="input">
-        <label for="">市区町村<span class="require">必須</span></label>
+        <label for="address2">市区町村<span class="require">必須</span></label>
         <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
     </div>
 
     <div class="input">
-        <label for="">番地・建物名<span class="require">必須</span></label>
+        <label for="address3">番地・建物名<span class="require">必須</span></label>
         <input type="text" name="address_3" value="" placeholder="" id="address3" required>
     </div>
 
     <div class="input">
-        <label for="">最寄り駅<span class="require">必須</span></label>
-        <input type="text" name="station" value="" placeholder="" id="eki" required>
+        <label for="station_input">最寄り駅<span class="require">必須</span></label>
+        <input type="text" name="station" value="" placeholder="" id="station_input" required>
     </div>
 
     <div class="input">
-
         <div class="yoko">
             <label for="">営業時間<span class="require">必須</span></label>
             <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
@@ -148,22 +147,29 @@
     <div class="input">
         <label for="">定休日<span class="require">必須</span></label>
         <div class="week">
-            <input type="checkbox" name="regular_day_off" value="" id="check1">
-            <label for="check1">月曜</label><br>
-            <input type="checkbox" id="check2">
-            <label for="check2">火曜</label><br>
-            <input type="checkbox" id="check3">
-            <label for="check3">水曜</label><br>
-            <input type="checkbox" id="check4">
-            <label for="check4">木曜</label><br>
-            <input type="checkbox" id="check5">
-            <label for="check5">金曜</label><br>
-            <input type="checkbox" id="check6">
-            <label for="check6">土曜</label><br>
-            <input type="checkbox" id="check7">
-            <label for="check7">日曜</label><br>
-            <input type="checkbox" id="check8">
-            <label for="check8">祝日</label><br>
+            <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
+            <label for="day_off_monday">月曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_tuesday">
+            <label for="day_off_tuesday">火曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_wednesday">
+            <label for="day_off_wednesday">水曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_thursday">
+            <label for="day_off_thursday">木曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_friday">
+            <label for="day_off_friday">金曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_saturday">
+            <label for="day_off_saturday">土曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_sunday">
+            <label for="day_off_sunday">日曜</label><br>
+
+            <input type="checkbox" name="regular_day_off"  id="day_off_holiday">
+            <label for="day_off_holiday">祝日</label><br>
         </div>
     </div>
 
@@ -173,13 +179,13 @@
     </div>
 
     <div class="input">
-        <label for="">メールアドレス</label>
-        <input type="email" name="mail_address" value="" id="mail" placeholder="">
+        <label for="mail_address">メールアドレス</label>
+        <input type="email" name="mail_address" value="" id="mail_address" placeholder="">
     </div>
 
     <div class="input">
-        <label for="">電話番号</label>
-        <input type="tel" name="phone_number" value="" placeholder="" id="tel" maxlength="17">
+        <label for="phone_number">電話番号</label>
+        <input type="tel" name="phone_number" value="" placeholder="" id="phone_number" maxlength="17">
     </div>
 
     <div class="snswrap">
@@ -187,8 +193,8 @@
             <div class="detail">
                 <div class="input">
                     <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
-                    <label for="">SNS</label>
-                    <select name="sns_category">
+                    <label for="sns_category">SNS</label>
+                    <select id="sns_category" name="sns_category">
                         <option value="">選択ください</option>
                         <option value="twitter">twitter</option>
                         <option value="instagram">instagram</option>
@@ -217,8 +223,8 @@
                 </div>
 
                 <div class="input">
-                    <label for="">ロゴの画像</label>
-                    <input type="file" name="menu_img[]" value="" id="">
+                    <label for="menu_img">ロゴの画像</label>
+                    <input type="file" name="menu_img[]" value="" id="menu_img">
                 </div>
 
                 <div class="input">
