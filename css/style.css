@@ -5,7 +5,11 @@ html {
 body {
   font-family: "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   font-size: 1.6rem;
+  line-height: 1.75;
+  letter-spacing: 0.1em;
   background-color: #F6F4EF;
+  overflow: hidden scroll;
+  color: #333;
 }
 
 .sample1 *{
