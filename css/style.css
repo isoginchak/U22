@@ -1,7 +1,9 @@
 @charset 'utf-8';
+
 html {
   font-size: 62.5%;
 }
+
 body {
   font-family: "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   font-size: 1.6rem;
@@ -12,11 +14,54 @@ body {
   color: #333;
 }
 
-.sample1 *{
+
+.sample1 * {
   display: none;
   height: 0px;
 }
 
-.yoko{
+.yoko {
   display: flex;
+}
+
+.form_wrap{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.submit{
+  margin: 20px 0 0 auto;
+  width: 130px;
+  white-space: nowrap;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: #11BEAE;
+  border-radius: 8px;
+  border: solid 1px #11BEAE;
+}
+
+label{
+  font-size: 18px;
+}
+
+.require{
+padding:1px 8px;
+margin-left: 10px;
+font-size: 16px;
+background-color: #BE416B;
+color: #fff;
+border-radius: 15%;
+}
+
+.input{
+  margin:15px 0 15px 0 ;
+}
+
+.input[type="time"]{
+  height: 16px;
+}
+
+.input:focus{
+  border-color: #11BEAE;
 }
