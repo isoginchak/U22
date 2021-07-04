@@ -105,6 +105,8 @@ header {
 
 h1 {
   width: 350px;
+  font-size: 80px;
+  color: #fff;
   /* width: 30vh; */
 }
 
@@ -370,6 +372,7 @@ nav li {
 
 .address_content {
   float: left;
+  width: 450px;
 }
 
 h4 {
@@ -392,10 +395,6 @@ iframe {
   margin-bottom: 15px;
 }
 
-.map_img {
-  /* width: 470px;
-  border: solid 1px #9b831b; */
-}
 
 /* footer */
 footer {
@@ -435,4 +434,11 @@ footer {
   width: 20px;
   text-align: right;
   padding: 6px 12px;
+}
+.s_address{
+padding-left: 50px;
+}
+
+.news_p{
+  font-size: 25px;
 }
