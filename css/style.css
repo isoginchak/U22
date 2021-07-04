@@ -14,6 +14,16 @@ body {
   color: #333;
 }
 
+h1 {
+  text-align: center;
+  margin: 30px;
+  font-size: 30px;
+}
+
+/* .form_wrap{
+  border:solid 5px #333;
+  padding: 20px;
+} */
 
 .sample1 * {
   display: none;
@@ -24,13 +34,13 @@ body {
   display: flex;
 }
 
-.form_wrap{
+.form_wrap {
   width: 900px;
   margin: 0 auto;
 }
 
-.submit{
-  margin: 20px 0 0 auto;
+.submit {
+  margin: 20px auto 0 auto;
   width: 130px;
   white-space: nowrap;
   padding: 10px 0;
@@ -40,34 +50,117 @@ body {
   border-radius: 8px;
   border: solid 1px #11BEAE;
   font-size: 20px;
-  margin: 0 auto;
+
 }
 
-.submit:hover{
+/* 
+.submitbtn {
+  width: 900px;
+  margin: 0 auto;
+} */
+
+.submit:hover {
   cursor: pointer;
 }
 
-label{
+label {
   font-size: 18px;
 }
 
-.require{
-padding:1px 8px;
-margin-left: 10px;
-font-size: 16px;
-background-color: #BE416B;
-color: #fff;
-border-radius: 15%;
+
+.require {
+  padding: 1px 8px;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: #BE416B;
+  color: #fff;
+  border-radius: 15%;
 }
 
-.input{
-  margin:15px 0 15px 0 ;
+.input {
+  margin: 0px 0 40px 0;
 }
 
-.input[type="time"]{
-  height: 16px;
+input[type="time"] {
+  height: 50px;
+  width: 150px;
+  color: #333;
 }
 
-.input:focus{
+.input:focus {
   border-color: #11BEAE;
+}
+
+.category1,
+.category2 {
+  display: flex;
+
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  top: 5px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.week label {
+  margin-right: 50px;
+}
+
+.category_wrap label {
+  width: 170px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"] {
+  height: 50px;
+  width: 560px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  width: 250px;
+}
+
+input{
+  border:1px solid  #ced4da;
+}
+
+
+input[type="text"]:focus{
+  border:1px solid  #ced4da;
+}
+
+button{
+  height: 40px;
+  width: 40px;
+  font-size: 26px;
+  margin: 5px auto 5px auto;
+  border:1px solid  #ced4da;
+
+}
+select{
+  height: 50px;
+  width: 200px;
+  border:1px solid  #ced4da;
+  color: #333;
+}
+.js-button{
+  height: 45px;
+  width: 130px; 
+  margin: auto auto;
+  font-size: 20px;
+}
+
+input[type="file"]{
+  border: none;
+  height: 40px;
+}
+.snspbtn,.menupbtn{
+  margin-bottom: 40px;
 }

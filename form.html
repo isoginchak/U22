@@ -20,42 +20,47 @@
 
         <div class="input">
           <label for="storename">店名<span class="require">必須</span></label>
+          <br>
           <input type="text" name="shop_name" value="" id="storename" required>
         </div>
 
         <div class="input">
           <label for="">カテゴリ<span class="require">必須</span></label>
           <div class="category_wrap">
-            <input type="radio" name="category" value="和食" id="category_id_1">
-            <label for="category_id_1">和食</label><br>
-            <input type="radio" id="category_id_2" value="洋食" name="category">
-            <label for="category_id_2">洋食</label><br>
-            <input type="radio" id="category_id_3" value="中華" name="category">
-            <label for="category_id_3">中華</label><br>
-            <input type="radio" id="category_id_4" value="イタリアン" name="category">
-            <label for="category_id_4">イタリアン</label><br>
-            <input type="radio" id="category_id_5" value="居酒屋" name="category">
-            <label for="category_id_5">居酒屋</label><br>
-            <input type="radio" id="category_id_6" value="麺類" name="category">
-            <label for="category_id_6">麺類</label><br>
-            <input type="radio" id="category_id_7" value="カフェ・スイーツ" name="category">
-            <label for="category_id_7">カフェ・スイーツ</label><br>
-            <input type="radio" id="category_id_8" value="その他" name="category">
-            <label for="category_id_8">その他</label><br>
-
+            <div class="category1">
+              <input type="radio" name="category" value="和食" id="category_id_1">
+              <label for="category_id_1">和食</label><br>
+              <input type="radio" id="category_id_2" value="洋食" name="category">
+              <label for="category_id_2">洋食</label><br>
+              <input type="radio" id="category_id_3" value="中華" name="category">
+              <label for="category_id_3">中華</label><br>
+              <input type="radio" id="category_id_4" value="イタリアン" name="category">
+              <label for="category_id_4">イタリアン</label><br>
+            </div>
+            <br>
+            <div class="category2">
+              <input type="radio" id="category_id_5" value="居酒屋" name="category">
+              <label for="category_id_5">居酒屋</label><br>
+              <input type="radio" id="category_id_6" value="麺類" name="category">
+              <label for="category_id_6">麺類</label><br>
+              <input type="radio" id="category_id_7" value="カフェ・スイーツ" name="category">
+              <label for="category_id_7">カフェ・スイーツ</label><br>
+              <input type="radio" id="category_id_8" value="その他" name="category">
+              <label for="category_id_8">その他</label><br>
+            </div>
           </div>
 
         </div>
 
 
         <div class="input">
-          <label for="addressnum">郵便番号<span class="require">必須</span></label>
-          <input type="tel" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
+          <label for="addressnum">郵便番号<span class="require">必須</span></label> <br>
+          <input type="number" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
           <button type="button" class="js-button" href="#">住所検索</button>
         </div>
 
         <div class="input">
-          <label for="prefecture">都道府県<span class="require">必須</span></label>
+          <label for="prefecture">都道府県<span class="require">必須</span></label> <br>
           <select name="address_1" id="prefecture">
             <option disabled selected>選択してください</option>
             <optgroup label="北海道・東北">
@@ -125,23 +130,23 @@
         </div>
 
         <div class="input">
-          <label for="address2">市区町村<span class="require">必須</span></label>
+          <label for="address2">市区町村<span class="require">必須</span></label> <br>
           <input type="text" name="address_2" size="60" placeholder="" id="address2" required>
         </div>
 
         <div class="input">
-          <label for="address3">番地・建物名<span class="require">必須</span></label>
+          <label for="address3">番地・建物名<span class="require">必須</span></label> <br>
           <input type="text" name="address_3" value="" placeholder="" id="address3" required>
         </div>
 
         <div class="input">
-          <label for="station_input">最寄り駅<span class="require">必須</span></label>
+          <label for="station_input">最寄り駅<span class="require">必須</span></label> <br>
           <input type="text" name="station" value="" placeholder="" id="station_input" required>
         </div>
 
         <div class="input">
           <div class="yoko">
-            <label for="">営業時間<span class="require">必須</span></label>
+            <label for="">営業時間<span class="require">必須</span></label> <br>
             <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
             <p>～</p><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
           </div>
@@ -150,6 +155,7 @@
         <div class="input">
           <label for="">定休日<span class="require">必須</span></label>
           <div class="week">
+            <div class="category1">
             <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
             <label for="day_off_monday">月曜</label><br>
 
@@ -161,7 +167,8 @@
 
             <input type="checkbox" name="regular_day_off" id="day_off_thursday">
             <label for="day_off_thursday">木曜</label><br>
-
+          </div>
+          <div class="category2">
             <input type="checkbox" name="regular_day_off" id="day_off_friday">
             <label for="day_off_friday">金曜</label><br>
 
@@ -175,19 +182,20 @@
             <label for="day_off_holiday">祝日</label><br>
           </div>
         </div>
+        </div>
 
         <div class="input">
-          <label for="">その他の定休日<span class="require">必須</span></label>
+          <label for="">その他の定休日<span class="require">必須</span></label> <br>
           <input type="text" name="other_regular_day_off" value="" placeholder="">
         </div>
 
         <div class="input">
-          <label for="mail_address">メールアドレス</label>
+          <label for="mail_address">メールアドレス</label> <br>
           <input type="email" name="mail_address" value="" id="mail_address" placeholder="">
         </div>
 
         <div class="input">
-          <label for="phone_number">電話番号</label>
+          <label for="phone_number">電話番号</label> <br>
           <input type="tel" name="phone_number" value="" placeholder="" id="phone_number" maxlength="17">
         </div>
 
@@ -196,7 +204,7 @@
             <div class="detail">
               <div class="input">
                 <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
-                <label for="sns_category">SNS</label>
+                <label for="sns_category">SNS</label> <br>
                 <select id="sns_category" name="sns_category">
                   <option value="">選択ください</option>
                   <option value="twitter">twitter</option>
@@ -207,7 +215,7 @@
                 <button type="button" name="button" class="snsmbtn">-</button>
               </div>
               <div class="input">
-                <label for="">SNSのURL</label>
+                <label for="">SNSのURL</label> <br>
                 <input type="url" name="sns_url[]" value="">
               </div>
             </div>
@@ -220,23 +228,23 @@
           <div class="menu_box" id="menu">
             <div class="detail">
               <div class="input">
-                <label for="">メニュー<span class="require">必須</span></label>
+                <label for="">メニュー<span class="require">必須</span></label> <br>
                 <input type="text" name="menu_name[]" value="" placeholder="" class="menu_title">
                 <button type="button" name="button" class="menumbtn">-</button>
               </div>
 
               <div class="input">
-                <label for="menu_img">ロゴの画像</label>
+                <label for="menu_img">メニューの画像</label>
                 <input type="file" name="menu_img[]" value="" id="menu_img">
               </div>
 
               <div class="input">
-                <label for="">値段</label>
+                <label for="">値段</label> <br>
                 <input type="number" name="price[]" value="" placeholder="" maxlength="8">
               </div>
 
               <div class="input">
-                <label for="">説明</label>
+                <label for="">説明</label> <br>
                 <input type="text" name="menu_description[]" value="" placeholder="" maxlength="50">
               </div>
             </div>
@@ -255,12 +263,12 @@
         </div>
 
         <div class="input">
-          <label for="">一言コメント</label>
+          <label for="">一言コメント</label> <br>
           <input type="text" name="comment" value="" id="comment_text" maxlength="100">
         </div>
 
 
-        <div class="input">
+        <div class="input　submitbtn">
           <input type="submit" name="" class="submit" value="決定">
         </div>
 
@@ -378,7 +386,7 @@
 
       </div>
       <div class="map_img fadein" id="map">
-        <iframe  width="470" height="300" frameborder="0" style="border:0">
+        <iframe width="470" height="300" frameborder="0" style="border:0">
         </iframe>
       </div>
     </div>
@@ -495,8 +503,8 @@
           var maptext = prefecture + address2 + address3;
           map = map + maptext;
           console.log(map);
-         map_img.getElementsByTagName("iframe")[0].src=map;
-         console.log(map,map_img);
+          map_img.getElementsByTagName("iframe")[0].src = map;
+          console.log(map, map_img);
         }
       }
     }
