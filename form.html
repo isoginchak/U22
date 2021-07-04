@@ -232,12 +232,12 @@
 
               <div class="input">
                 <label for="">値段</label>
-                <input type="number" name="price[]" value="" placeholder="">
+                <input type="number" name="price[]" value="" placeholder="" maxlength="8">
               </div>
 
               <div class="input">
                 <label for="">説明</label>
-                <input type="text" name="menu_description[]" value="" placeholder="">
+                <input type="text" name="menu_description[]" value="" placeholder="" maxlength="50">
               </div>
             </div>
           </div>
@@ -256,13 +256,12 @@
 
         <div class="input">
           <label for="">一言コメント</label>
-          <input type="text" name="comment" value="" id="">
+          <input type="text" name="comment" value="" id="comment_text" maxlength="100">
         </div>
 
 
         <div class="input">
           <input type="submit" name="" class="submit" value="決定">
-          <!-- <button type="button" name="button" class="preview">プレビュー</button> -->
         </div>
 
       </form>
@@ -273,15 +272,12 @@
     <header>
       <div class="full">
         <div class="img01"></div>
-        <div class="img02"></div>
-        <div class="img03"></div>
       </div>
       <div class="logo">
         <h1 class="s_storename">
 
         </h1>
       </div>
-      <p class="tate">日常に寄り添った<br>美味しいパンを<br>お届けします。</p>
       <a href="#menu">
         <table class="header_table">
           <tr>
@@ -329,7 +325,7 @@
         <h2>MENU</h2>
       </div>
       <div class="menu_image fadein">
-        <img src="images/tenpo05.jpg" alt="フランスパン" class="menuimage">
+        <img src="images/tenpo05.jpg" alt="" class="menuimage">
       </div>
       <ul class="s_menu_ul">
         <!-- menu1 -->
@@ -346,27 +342,13 @@
 
     <!--新着情報-->
     <!--  メニューの上の方がいいのかも -->
-    <div class="news">
-      <div class="h2" id="news">
-        <h2>NEWS</h2>
-      </div>
-      <table class="fadein">
-        <tr>
-          <th>2020.11.30</th>
-          <td>名産ブルーチーズ「フルム・ダンベール」を使ったパンや郷土料理をアレンジした惣菜パンなど、フェア限定商品をご用意しております。</td>
-        </tr>
-        <tr>
-          <th>2020.11.16</th>
-          <td>ご好評いただいております、デザートに、季節限定でオレンジを使用したデザートが加わります。</td>
-        </tr>
-        <tr>
-
-          <th>2020.11.8</th>
-          <td>フランス　オーベルニュ地方の伝統パンや郷土料理の惣菜パンなどを販売するオーベルニュ地方フェアを開催いたします。</td>
-        </tr>
-      </table>
-
+    <div class="h2" id="news">
+      <h2>コメント</h2>
+      <p class="news_p"><span class="s_news"></span></p>
     </div>
+
+
+
 
 
     <!--アドレス-->
@@ -380,11 +362,12 @@
       </div>
       <div class="address_content fadein">
         <h4>Boulangerie HAL</h4>
-        <p class="address_p">住所：<span class="s_addressnum"></span><span class="s_address"></span><br>
+        <p class="address_p">住所：<span class="s_addressnum"></span><br><span class="s_address"></span><br>
           電話：<span class="s_tel"></span><br>
           メールアドレス：<span class="s_mail"></span><br>
         </p>
         <p>
+          最寄り駅：
           <span class="s_eki"></span>
           <br>
         </p>
@@ -394,10 +377,9 @@
         <p>定休日：</p>
 
       </div>
-      <div class="map_img fadein">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.0908729024638!2d139.69964074330827!3d35.64789358540413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b45f5311ed1%3A0x12987f54caa1ee65!2z44CSMTUwLTAwMzMg5p2x5Lqs6YO95riL6LC35Yy654y_5qW955S677yS77yZ4oiS77yR77yY!5e0!3m2!1sja!2sjp!4v1433666443406"
-          width="470" height="300" frameborder="0" style="border:0"></iframe>
+      <div class="map_img fadein" id="map">
+        <iframe  width="470" height="300" frameborder="0" style="border:0">
+        </iframe>
       </div>
     </div>
 
@@ -477,6 +459,9 @@
     var closetime = $('#closetime').val();
     var mail = document.getElementById("mail_address").value;
     var tel = document.getElementById("phone_number").value;
+    var comment = document.getElementById("comment_text").value;
+    var map_img = document.getElementById("map");
+
 
     //店舗名取得
     if (storename == "") {
@@ -506,6 +491,12 @@
           console.log("番地記入なし");
         } else {
           $(".s_address").text(prefecture + address2 + address3);
+          var map = "https://maps.google.co.jp/maps?output=embed&q=";
+          var maptext = prefecture + address2 + address3;
+          map = map + maptext;
+          console.log(map);
+         map_img.getElementsByTagName("iframe")[0].src=map;
+         console.log(map,map_img);
         }
       }
     }
@@ -540,6 +531,13 @@
       $(".s_tel").text(tel);
     }
 
+    //コメント取得
+    if (comment == "") {
+      console.log("コメントなし");
+    } else {
+      $(".s_news").text(comment);
+    }
+
     //メニューhtml作成
     var menu_cnt = $(".menu_title").length;
     menu_cnt = menu_cnt - 1;
@@ -547,6 +545,11 @@
     for (var i = 0; i < menu_cnt; i++) {
       $(".s_menu_ul").append(savemenu);
     }
+
+    //メニューの挿入（画像以外）
+
+
+
 
     //html保存
     var savehtml;

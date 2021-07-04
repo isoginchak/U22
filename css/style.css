@@ -9,7 +9,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  background-color: #F6F4EF;
+  /* background-color: #F6F4EF; */
   overflow: hidden scroll;
   color: #333;
 }
@@ -33,12 +33,18 @@ body {
   margin: 20px 0 0 auto;
   width: 130px;
   white-space: nowrap;
-  padding: 15px 0;
+  padding: 10px 0;
   text-decoration: none;
   color: #fff;
   background-color: #11BEAE;
   border-radius: 8px;
   border: solid 1px #11BEAE;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.submit:hover{
+  cursor: pointer;
 }
 
 label{
