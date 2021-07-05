@@ -33,7 +33,7 @@
               <input type="radio" id="category_id_2" value="洋食" name="category">
               <label for="category_id_2">洋食</label><br>
               <input type="radio" id="category_id_3" value="中華" name="category">
-              <label for="category_id_3">中華</label><br>
+              <label for="category_id_3" class="short">中華</label><br>
               <input type="radio" id="category_id_4" value="イタリアン" name="category">
               <label for="category_id_4">イタリアン</label><br>
             </div>
@@ -44,7 +44,7 @@
               <input type="radio" id="category_id_6" value="麺類" name="category">
               <label for="category_id_6">麺類</label><br>
               <input type="radio" id="category_id_7" value="カフェ・スイーツ" name="category">
-              <label for="category_id_7">カフェ・スイーツ</label><br>
+              <label for="category_id_7" class="short">カフェ・スイーツ</label><br>
               <input type="radio" id="category_id_8" value="その他" name="category">
               <label for="category_id_8">その他</label><br>
             </div>
@@ -248,7 +248,8 @@
 
               <div class="input">
                 <label for="">説明</label> <br>
-                <input type="text" name="menu_description[]" value="" placeholder="" maxlength="50">
+                <!-- <input type="text" name="menu_description[]" value="" placeholder="" class="ex_box" maxlength="50"> -->
+                <textarea name="menu_description[]" id="menu_description[]"  class="ex_box"></textarea>
               </div>
             </div>
             <hr>
@@ -267,8 +268,9 @@
         </div>
 
         <div class="input">
-          <label for="">一言コメント</label> <br>
-          <input type="text" name="comment" value="" id="comment_text" maxlength="100">
+          <label for="">一言コメント (50文字以内)</label> <br>
+          <!-- <input type="text" name="comment" value="" id="comment_text" class="ex_box" maxlength="50"> -->
+          <textarea name="comment" id="comment_text"  class="ex_box"></textarea>
         </div>
 
 

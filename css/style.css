@@ -64,15 +64,17 @@ text-align: center;
 }
 
 
-
 .submit:hover {
   cursor: pointer;
 }
 
-label {
-  font-size: 18px;
+label:not(.category1 label,.category2 label) {
+  font-weight: bold;
 }
 
+label{
+  font-size: 18px;;
+}
 
 .require {
   padding: 1px 8px;
@@ -114,9 +116,13 @@ input[type="checkbox"] {
   margin-right: 50px;
 }
 
-.category_wrap label {
-  width: 170px;
+.category_wrap label{
+  width: 100px;
 }
+
+.short{
+  width: 170px !important;
+  }
 
 input[type="text"],
 input[type="number"],
@@ -199,3 +205,10 @@ hr{
   margin-bottom: 10px;
   border: none;
 }
+.ex_box{
+  height: 70px;
+  width: 560px;
+  color: #333;
+  border: 1px solid #ced4da;
+}
+
