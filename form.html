@@ -14,7 +14,7 @@
 
 <body>
   <div class="wrap">
-    <h1>フォーム作成</h1>
+    <h1>webページ作成フォーム</h1>
     <div class="form_wrap">
       <form class="" action="form.html" method="post" onsubmit="return check();">
 
@@ -145,43 +145,43 @@
         </div>
 
         <div class="input">
-          <div class="yoko">
-            <label for="">営業時間<span class="require">必須</span></label> <br>
-            <input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
-            <p>～</p><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
+
+          <label for="">営業時間<span class="require">必須</span></label> <br>
+          <div class="yoko"><input type="time" name="opening_hours" value="" placeholder="" id="opentime" required>
+            <div class="kara_wrap"><p class="kara">～</p></div><input type="time" name="closing_hours" value="" placeholder="" id="closetime" required>
           </div>
         </div>
 
         <div class="input">
-          <label for="">定休日<span class="require">必須</span></label>
+          <label for="">定休日<span class="require">必須</span> (複数選択可)</label>
           <div class="week">
             <div class="category1">
-            <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
-            <label for="day_off_monday">月曜</label><br>
+              <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
+              <label for="day_off_monday">月曜</label><br>
 
-            <input type="checkbox" name="regular_day_off" id="day_off_tuesday">
-            <label for="day_off_tuesday">火曜</label><br>
+              <input type="checkbox" name="regular_day_off" id="day_off_tuesday">
+              <label for="day_off_tuesday">火曜</label><br>
 
-            <input type="checkbox" name="regular_day_off" id="day_off_wednesday">
-            <label for="day_off_wednesday">水曜</label><br>
+              <input type="checkbox" name="regular_day_off" id="day_off_wednesday">
+              <label for="day_off_wednesday">水曜</label><br>
 
-            <input type="checkbox" name="regular_day_off" id="day_off_thursday">
-            <label for="day_off_thursday">木曜</label><br>
+              <input type="checkbox" name="regular_day_off" id="day_off_thursday">
+              <label for="day_off_thursday">木曜</label><br>
+            </div>
+            <div class="category2">
+              <input type="checkbox" name="regular_day_off" id="day_off_friday">
+              <label for="day_off_friday">金曜</label><br>
+
+              <input type="checkbox" name="regular_day_off" id="day_off_saturday">
+              <label for="day_off_saturday">土曜</label><br>
+
+              <input type="checkbox" name="regular_day_off" id="day_off_sunday">
+              <label for="day_off_sunday">日曜</label><br>
+
+              <input type="checkbox" name="regular_day_off" id="day_off_holiday">
+              <label for="day_off_holiday">祝日</label><br>
+            </div>
           </div>
-          <div class="category2">
-            <input type="checkbox" name="regular_day_off" id="day_off_friday">
-            <label for="day_off_friday">金曜</label><br>
-
-            <input type="checkbox" name="regular_day_off" id="day_off_saturday">
-            <label for="day_off_saturday">土曜</label><br>
-
-            <input type="checkbox" name="regular_day_off" id="day_off_sunday">
-            <label for="day_off_sunday">日曜</label><br>
-
-            <input type="checkbox" name="regular_day_off" id="day_off_holiday">
-            <label for="day_off_holiday">祝日</label><br>
-          </div>
-        </div>
         </div>
 
         <div class="input">

@@ -1,7 +1,12 @@
 @charset 'utf-8';
 
+* {
+  outline: none;
+}
+
 html {
   font-size: 62.5%;
+
 }
 
 body {
@@ -47,7 +52,7 @@ h1 {
   text-decoration: none;
   color: #fff;
   background-color: #11BEAE;
-  border-radius: 8px;
+  border-radius: 10px;
   border: solid 1px #11BEAE;
   font-size: 20px;
 
@@ -74,7 +79,7 @@ label {
   font-size: 16px;
   background-color: #BE416B;
   color: #fff;
-  border-radius: 15%;
+  border-radius: 10%;
 }
 
 .input {
@@ -127,40 +132,59 @@ input[type="number"] {
   width: 250px;
 }
 
-input{
-  border:1px solid  #ced4da;
+input {
+  border: 1px solid #ced4da;
 }
 
 
-input[type="text"]:focus{
-  border:1px solid  #ced4da;
-}
-
-button{
+button {
   height: 40px;
   width: 40px;
   font-size: 26px;
-  margin: 5px auto 5px auto;
-  border:1px solid  #ced4da;
-
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  vertical-align: middle;
 }
-select{
+
+button:hover {
+  cursor: pointer;
+}
+
+select {
   height: 50px;
   width: 200px;
-  border:1px solid  #ced4da;
+  border: 1px solid #ced4da;
   color: #333;
+
 }
-.js-button{
+
+.js-button {
   height: 45px;
-  width: 130px; 
+  width: 130px;
   margin: auto auto;
   font-size: 20px;
 }
 
-input[type="file"]{
+input[type="file"] {
   border: none;
   height: 40px;
 }
-.snspbtn,.menupbtn{
+
+.snspbtn,
+.menupbtn {
   margin-bottom: 40px;
+}
+
+.kara {
+  font-size: 20px;
+}
+
+.kara_wrap {
+  line-height: 25px;
+  margin: auto 10px auto 10px;
+}
+
+input:focus {
+  border: solid 1px #11bead9d;
+  box-shadow:0 0 6px rgb(128, 128, 128);
 }
