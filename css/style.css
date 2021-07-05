@@ -55,14 +55,15 @@ h1 {
   border-radius: 10px;
   border: solid 1px #11BEAE;
   font-size: 20px;
+  text-align: center;
 
 }
 
-/* 
-.submitbtn {
-  width: 900px;
-  margin: 0 auto;
-} */
+.submitbtn{
+text-align: center;
+}
+
+
 
 .submit:hover {
   cursor: pointer;
@@ -187,4 +188,14 @@ input[type="file"] {
 input:focus {
   border: solid 1px #11bead9d;
   box-shadow:0 0 6px rgb(128, 128, 128);
+}
+
+hr{
+  display: block;
+  height: 1px;
+  background-color: #e6e9e8;
+  color: #e6e9e8;
+  width: 700px;
+  margin-bottom: 10px;
+  border: none;
 }
