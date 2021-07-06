@@ -14,10 +14,20 @@
 </head>
 
 <body>
+  <div class="top">
+    <h1>お店の内容を<br><span class="hbr">登録してください</span></h1>
+    <img src="images/logo.png" alt="ロゴ" class="logo">
+
+
+    <img src="images/girl.png" alt="女のコ" class="girl">
+
+  </div>
+
   <div class="wrap">
-    <h1>webページ作成フォーム</h1>
+    
+
     <div class="form_wrap">
-      <form class="" action="form.html" method="post" onsubmit="return check();">
+      <form class="" action="form.html" method="post" name="webmakeform" onsubmit="return check();">
 
         <div class="input">
           <label for="storename">店名<span class="require">必須</span></label>
@@ -157,31 +167,31 @@
 
         <div class="input">
           <label for="">定休日(複数選択可)</label>
-          <div class="week">
+          <div class="week" id="week_box">
             <div class="category1">
-              <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
+              <input type="checkbox" name="regular_day_off" value="月曜" id="day_off_monday">
               <label for="day_off_monday">月曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_tuesday">
+              <input type="checkbox" name="regular_day_off" value="火曜">
               <label for="day_off_tuesday">火曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_wednesday">
+              <input type="checkbox" name="regular_day_off" value="水曜">
               <label for="day_off_wednesday">水曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_thursday">
+              <input type="checkbox" name="regular_day_off" value="木曜">
               <label for="day_off_thursday">木曜</label><br>
             </div>
             <div class="category2">
-              <input type="checkbox" name="regular_day_off" id="day_off_friday">
+              <input type="checkbox" name="regular_day_off" value="金曜">
               <label for="day_off_friday">金曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_saturday">
+              <input type="checkbox" name="regular_day_off" value="土曜">
               <label for="day_off_saturday">土曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_sunday">
+              <input type="checkbox" name="regular_day_off" value="日曜">
               <label for="day_off_sunday">日曜</label><br>
 
-              <input type="checkbox" name="regular_day_off" id="day_off_holiday">
+              <input type="checkbox" name="regular_day_off" value="祝日">
               <label for="day_off_holiday">祝日</label><br>
             </div>
           </div>
@@ -189,7 +199,7 @@
 
         <div class="input">
           <label for="">その他の定休日</label> <br>
-          <input type="text" name="other_regular_day_off" value="" placeholder="">
+          <input type="text" name="other_regular_day_off" value="" placeholder="" id="other_holiday">
         </div>
 
         <div class="input">
@@ -249,7 +259,7 @@
 
               <div class="input">
                 <label for="">説明</label> <br>
-                <textarea name="menu_description" id="menu_description"  class="ex_box"></textarea>
+                <textarea name="menu_description" id="menu_description" class="ex_box"></textarea>
               </div>
               <hr>
             </div>
@@ -269,15 +279,14 @@
 
         <div class="input">
           <label for="">一言コメント (50文字以内)</label> <br>
-          <!-- <input type="text" name="comment" value="" id="comment_text" class="ex_box" maxlength="50"> -->
-          <textarea name="comment" id="comment_text"  class="ex_box"></textarea>
+          <textarea name="comment" id="comment_text" class="ex_box"></textarea>
         </div>
 
 
         <div class="input submitbtn">
           <input type="hidden" name="check_img_data" id="test">
           <input type="hidden" name="img_count" id="count">
-
+          <input type="button" name="" class="reset" value="リセット">
           <input type="submit" name="" class="submit" value="決定">
         </div>
 
@@ -388,7 +397,7 @@
         <p>
           営業時間：<span class="s_time"></span><br>
         </p>
-        <p>定休日：</p>
+        <p>定休日：<span class="s_holiday"></span></p>
 
       </div>
       <div class="map_img fadein" id="map">
@@ -398,26 +407,26 @@
     </div>
 
     <!--フッター-->
-  <footer class="footer">
-    <div class="top">
-      <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
-    </div>
-    <p class="small">copyright Boulangerie HAL</p>
-    <div class="sns">
-      <a href="#">
-      <img src="images/twitter.svg" alt="twitter">
-      </a>
-      <a href="#">
-      <img src="images/insta.svg" alt="insta">
-      </a>
-      <a href="#">
-        <img src="images/facebook.svg" alt="facebook">
+    <footer class="footer">
+      <div class="top">
+        <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
+      </div>
+      <p class="small">copyright Boulangerie HAL</p>
+      <div class="sns">
+        <a href="#">
+          <img src="images/twitter.svg" alt="twitter">
         </a>
-      <a href="#">
-        <img src="images/youtube.svg" alt="youtube">
+        <a href="#">
+          <img src="images/insta.svg" alt="insta">
         </a>
-    </div>
-  </footer>
+        <a href="#">
+          <img src="images/facebook.svg" alt="facebook">
+        </a>
+        <a href="#">
+          <img src="images/youtube.svg" alt="youtube">
+        </a>
+      </div>
+    </footer>
   </div>
 
 
@@ -480,6 +489,8 @@
     var tel = document.getElementById("phone_number").value;
     var comment = document.getElementById("comment_text").value;
     var map_img = document.getElementById("map");
+    var other_holi = document.getElementById("other_holiday").value;
+
 
 
     //店舗名取得
@@ -494,9 +505,9 @@
     if (addressnum == "") {
       console.log("郵便番号記入なし");
     } else {
-      var add1=addressnum.slice( 0, 3 ) ;
-      var add2=addressnum.slice( -4 ) ;
-      $(".s_addressnum").text("〒" + add1+"-"+add2);
+      var add1 = addressnum.slice(0, 3);
+      var add2 = addressnum.slice(-4);
+      $(".s_addressnum").text("〒" + add1 + "-" + add2);
     }
 
     //県取得
@@ -536,7 +547,36 @@
       $(".s_time").text(opentime + "~" + closetime);
     }
 
-    //定休日取得　めんどい
+    //定休日取得
+
+    var holiday = " ";
+
+    for (var i = 0; i < document.webmakeform.regular_day_off.length; i++) {
+
+      // i番目のチェックボックスがチェックされているかを判定
+      if (document.webmakeform.regular_day_off[i].checked) {
+        holiday = holiday + document.webmakeform.regular_day_off[i].value + "・";
+      }
+    }
+    var holiday1 = holiday.slice(1);
+    var holiday2 = holiday1.slice(0, -1);
+    if (holiday2 == "") {
+      if (other_holi == "") {
+        holiday2 = "なし";
+        $(".s_holiday").text(holiday2);
+      } else {
+        $(".s_holiday").text(other_holi);
+      }
+
+    } else {
+      if (other_holi == "") {
+        $(".s_holiday").text(holiday2);
+      } else {
+        holiday2 = holiday2 + "," + other_holi;
+        $(".s_holiday").text(holiday2);
+      }
+    }
+
 
     //メールアドレス取得
     if (mail == "") {
@@ -569,6 +609,10 @@
 
     //メニューの挿入（画像以外）
 
+
+    //snshtml作成
+
+    //snsの挿入
 
 
 

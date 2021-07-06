@@ -2,11 +2,12 @@
 
 * {
   outline: none;
+  maragin: 0;
+  padding: 0;
 }
 
 html {
   font-size: 62.5%;
-
 }
 
 body {
@@ -17,18 +18,27 @@ body {
   /* background-color: #F6F4EF; */
   overflow: hidden scroll;
   color: #333;
+  background-color: #F6F4EF;
+
 }
 
 h1 {
   text-align: center;
-  margin: 30px;
-  font-size: 30px;
+  /* margin: 30px; */
+  font-size: 3.4vw;
+  text-align: left;
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  font-weight: bold;
+    line-height: 5vw;
+  
 }
 
-/* .form_wrap{
-  border:solid 5px #333;
-  padding: 20px;
-} */
+.hbr{
+  padding-left: 13vw;
+}
+
 
 .sample1 * {
   display: none;
@@ -40,15 +50,19 @@ h1 {
 }
 
 .form_wrap {
-  width: 900px;
-  margin: 0 auto;
+  width: 60vw;
+  margin: 0 auto 7vh auto;
+  background-color: #fff;
+  padding: 5vw 7vw 2vw 7vw;
+  border-radius: .4vw;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
 }
 
-.submit {
-  margin: 20px auto 0 auto;
-  width: 130px;
+.submit,.reset {
+  margin: 70px auto 0 0;
+  width: 200px;
   white-space: nowrap;
-  padding: 10px 0;
+  padding: 25px 0;
   text-decoration: none;
   color: #fff;
   background-color: #11BEAE;
@@ -56,7 +70,12 @@ h1 {
   border: solid 1px #11BEAE;
   font-size: 20px;
   text-align: center;
+  font-weight: bold;
 
+}
+
+.submit{
+  margin-left: 10vw;
 }
 
 .submitbtn{
@@ -64,7 +83,7 @@ text-align: center;
 }
 
 
-.submit:hover {
+input[type="button"]:hover,input[type="submit"]{
   cursor: pointer;
 }
 
@@ -191,7 +210,7 @@ input[type="file"] {
   margin: auto 10px auto 10px;
 }
 
-input:focus {
+input:focus,textarea:focus {
   border: solid 1px #11bead9d;
   box-shadow:0 0 6px rgb(128, 128, 128);
 }
@@ -212,3 +231,26 @@ hr{
   border: 1px solid #ced4da;
 }
 
+.top{
+  width: 100vw;
+  height: 40vh;
+  position: relative;
+  margin-bottom: 24vh;
+
+
+}
+.logo{
+  position: absolute;
+  width: 6vw;
+  top: 1vh;
+  left: 2vw;
+
+}
+
+.girl{
+  height: 45vh;
+  position: absolute;
+  right: 20%;
+  top: 30%;
+
+}
