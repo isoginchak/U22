@@ -155,7 +155,7 @@
         </div>
 
         <div class="input">
-          <label for="">定休日<span class="require">必須</span> (複数選択可)</label>
+          <label for="">定休日(複数選択可)</label>
           <div class="week">
             <div class="category1">
               <input type="checkbox" name="regular_day_off" value="monday" id="day_off_monday">
@@ -187,7 +187,7 @@
         </div>
 
         <div class="input">
-          <label for="">その他の定休日<span class="require">必須</span></label> <br>
+          <label for="">その他の定休日</label> <br>
           <input type="text" name="other_regular_day_off" value="" placeholder="">
         </div>
 
@@ -218,7 +218,7 @@
               </div>
               <div class="input">
                 <label for="">SNSのURL</label> <br>
-                <input type="url" name="sns_url[]" value="">
+                <input type="url" name="sns_url" value="">
               </div>
               <hr>
             </div>
@@ -232,24 +232,23 @@
             <div class="detail">
               <div class="input">
                 <label for="">メニュー<span class="require">必須</span></label> <br>
-                <input type="text" name="menu_name[]" value="" placeholder="" class="menu_title">
+                <input type="text" name="menu_name" value="" placeholder="" class="menu_title">
                 <button type="button" name="button" class="menumbtn">-</button>
               </div>
 
               <div class="input">
                 <label for="menu_img">メニューの画像</label>
-                <input type="file" name="menu_img[]" value="" id="menu_img">
+                <input type="file" name="menu_img" value="" id="menu_img">
               </div>
 
               <div class="input">
                 <label for="">値段</label> <br>
-                <input type="number" name="price[]" value="" placeholder="" maxlength="8">
+                <input type="number" name="price" value="" placeholder="" maxlength="8">
               </div>
 
               <div class="input">
                 <label for="">説明</label> <br>
-                <!-- <input type="text" name="menu_description[]" value="" placeholder="" class="ex_box" maxlength="50"> -->
-                <textarea name="menu_description[]" id="menu_description[]"  class="ex_box"></textarea>
+                <textarea name="menu_description" id="menu_description"  class="ex_box"></textarea>
               </div>
               <hr>
             </div>
@@ -264,7 +263,7 @@
 
         <div class="input">
           <label for="">店内画像</label>
-          <input type="file" name="shop_img[]" value="" id="">
+          <input type="file" name="shop_img" value="" id="">
         </div>
 
         <div class="input">
@@ -395,21 +394,26 @@
     </div>
 
     <!--フッター-->
-    <footer class="footer">
-      <div class="top">
-        <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
-      </div>
-      <p class="small">copyright Boulangerie HAL</p>
-      <div class="sns">
-        <a href="#">
-          <img src="images/twitter.svg" alt="twitter">
+  <footer class="footer">
+    <div class="top">
+      <a href="#" class="top"><img src="images/top.png" alt="矢印"><br>TOP</a>
+    </div>
+    <p class="small">copyright Boulangerie HAL</p>
+    <div class="sns">
+      <a href="#">
+      <img src="images/twitter.svg" alt="twitter">
+      </a>
+      <a href="#">
+      <img src="images/insta.svg" alt="insta">
+      </a>
+      <a href="#">
+        <img src="images/facebook.svg" alt="facebook">
         </a>
-        <a href="#">
-          <img src="images/insta.svg" alt="insta">
+      <a href="#">
+        <img src="images/youtube.svg" alt="youtube">
         </a>
-      </div>
-    </footer>
-
+    </div>
+  </footer>
   </div>
 
 
@@ -486,7 +490,9 @@
     if (addressnum == "") {
       console.log("郵便番号記入なし");
     } else {
-      $(".s_addressnum").text("〒" + addressnum);
+      var add1=addressnum.slice( 0, 3 ) ;
+      var add2=addressnum.slice( -4 ) ;
+      $(".s_addressnum").text("〒" + add1+"-"+add2);
     }
 
     //県取得
