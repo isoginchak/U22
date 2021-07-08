@@ -2,7 +2,7 @@
 
 * {
   outline: none;
-  maragin: 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -24,12 +24,11 @@ body {
 
 h1 {
   text-align: center;
-  /* margin: 30px; */
   font-size: 3.4vw;
   text-align: left;
   position: absolute;
-  top: 45%;
-  left: 20%;
+  top: 38%;
+  left: 15%;
   font-weight: bold;
     line-height: 5vw;
   
@@ -74,6 +73,10 @@ h1 {
 
 }
 
+.submit:hover,.reset:hover{
+  transform:scale(1.1,1.1);
+}
+
 .submit{
   margin-left: 10vw;
 }
@@ -112,6 +115,8 @@ input[type="time"] {
   height: 50px;
   width: 150px;
   color: #333;
+  font-size: 16px;
+  padding-left: 10px;
 }
 
 .input:focus {
@@ -152,6 +157,12 @@ input[type="url"] {
   width: 560px;
   margin-top: 5px;
   font-size: 16px;
+  padding-left: 10px;
+}
+
+textarea{
+  padding: 10px;
+  font-size: 16px;
 }
 
 input[type="number"] {
@@ -181,6 +192,8 @@ select {
   width: 200px;
   border: 1px solid #ced4da;
   color: #333;
+  padding-left: 8px;
+  font-size: 16px;
 
 }
 
@@ -233,9 +246,9 @@ hr{
 
 .top{
   width: 100vw;
-  height: 40vh;
+  height: 80vh;
   position: relative;
-  margin-bottom: 24vh;
+  /* margin-bottom: 24vh; */
 
 
 }
@@ -248,9 +261,9 @@ hr{
 }
 
 .girl{
-  height: 45vh;
+  height: 22vw;
   position: absolute;
   right: 20%;
-  top: 30%;
+  top: 25%;
 
 }

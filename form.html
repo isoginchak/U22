@@ -16,15 +16,16 @@
 <body>
   <div class="top">
     <h1>お店の内容を<br><span class="hbr">登録してください</span></h1>
+    <a href="#">
     <img src="images/logo.png" alt="ロゴ" class="logo">
-
+  </a>
 
     <img src="images/girl.png" alt="女のコ" class="girl">
 
   </div>
 
   <div class="wrap">
-    
+
 
     <div class="form_wrap">
       <form class="" action="form.html" method="post" name="webmakeform" onsubmit="return check();">
@@ -286,7 +287,7 @@
         <div class="input submitbtn">
           <input type="hidden" name="check_img_data" id="test">
           <input type="hidden" name="img_count" id="count">
-          <input type="button" name="" class="reset" value="リセット">
+          <input type="button" name="" class="reset" onclick="reset()" value="リセット">
           <input type="submit" name="" class="submit" value="決定">
         </div>
 
@@ -432,6 +433,9 @@
 
 </body>
 <script type="text/javascript" charset="UTF-8">
+  function reset() {
+    document.webmakeform.reset();
+  }
   var snscnt = 1;
   var menucnt = 1;
   $('.snspbtn').on('click', function () {
