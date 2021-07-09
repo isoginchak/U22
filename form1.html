@@ -34,7 +34,7 @@
 
 
     <div class="form_wrap">
-      <form class="" enctype="multipart/form-data" id="form" 　 action="/create/confirm-and-db-insert" method="post"
+      <form class="" enctype="multipart/form-data" id="form" action="/create/confirm-and-db-insert" method="post"
         name="webmakeform" onsubmit="return check();">
 
         <div class="input">
@@ -226,7 +226,7 @@
               <div class="input">
                 <!-- 選択されたurlをうつテキストのフォームを作成するjsを作る -->
                 <label for="sns_category">SNS</label> <br>
-                <select id="sns_category" name="sns_category">
+                <select id="sns_category" name="sns_category" class="sns_choice" id="sns_ch">
                   <option value="">選択ください</option>
                   <option value="twitter">twitter</option>
                   <option value="instagram">instagram</option>
@@ -237,7 +237,7 @@
               </div>
               <div class="input">
                 <label for="">SNSのURL</label> <br>
-                <input type="url" name="sns_url" value="">
+                <input type="url" name="sns_url" value="" class="sns_url">
               </div>
               <hr>
             </div>
@@ -424,16 +424,16 @@
       </div>
       <p class="small">copyright Boulangerie HAL</p>
       <div class="sns">
-        <a href="#">
+        <a href="#" class="twitter_url">
           <img src="images/twitter.svg" alt="twitter">
         </a>
-        <a href="#">
+        <a href="#" class="insta_url">
           <img src="images/insta.svg" alt="insta">
         </a>
-        <a href="#">
+        <a href="#" class=facebook_url>
           <img src="images/facebook.svg" alt="facebook">
         </a>
-        <a href="#">
+        <a href="#" class="youtube_url">
           <img src="images/youtube.svg" alt="youtube">
         </a>
       </div>
@@ -612,42 +612,75 @@
       $(".s_news").text(comment);
     }
 
-    //メニューhtml作成
+
     var menu_name = [];
     var menu_price = [];
     var menu_ex = [];
     var menu_cnt = $(".menu_title").length;
     var savemenu = $(".s_menu_ul").html();
 
+
+    //メニューの取得
     for (var i = 0; i < menu_cnt; i++) {
       menu_name[i] = $('.menu_title').eq(i).val();
       menu_price[i] = $('.price').eq(i).val();
       menu_ex[i] = $('.menu_ex').eq(i).val();
-
     }
+
+    //メニューの作成・追加
     for (var i = 0; i < menu_cnt; i++) {
       $(".s_menu_title").eq(0).html(menu_name[i]);
       $(".s_menu_price").eq(0).html(menu_price[i]);
       $(".s_menu_ex").eq(0).html(menu_ex[i]);
-
       var tmp = $(".s_menu_box").eq(0).clone();
       $(tmp).appendTo('.s_menu');
-
     }
+
+    //メニューの削除
     $(".s_menu_box").eq(0).remove();
-    
-
-
-
-
-
-    //メニューの挿入（画像以外）
-
 
 
     //snshtml作成
+    var sns_cnt = $(".sns_choice").length;
+    var url_flag1 = 0;
+    var url_flag2 = 0;
+    var url_flag3 = 0;
+    var url_flag4 = 0;
 
-    //snsの挿入
+    for (var i = 0; i < sns_cnt; i++) {
+      var tmp = $('.sns_choice').eq(i).val();
+      var tmp_url = $('.sns_url').eq(i).val();
+      console.log(tmp);
+      if (tmp == "twitter") {
+        $(".twitter_url").attr('href', tmp_url);
+        url_flag1 = 1;
+
+      } else if (tmp == "instagram") {
+        $(".insta_url").attr('href', tmp_url);
+        url_flag2 = 1;
+
+      } else if (tmp == "facebook") {
+        $(".facebook_url").attr('href', tmp_url);
+        url_flag3 = 1;
+      } else {
+        $(".youtube_url").attr('href', tmp_url);
+        url_flag4 = 1;
+      }
+    }
+
+    if (url_flag1 == 0) {
+      $(".twitter_url").remove();
+    }
+
+    if (url_flag2 == 0) {
+      $(".insta_url").remove();
+    }
+    if (url_flag3 == 0) {
+      $(".facebook_url").remove();
+    }
+    if (url_flag4 == 0) {
+      $(".youtube_url").remove();
+    }
 
 
 
