@@ -5,20 +5,26 @@
   <meta charset="utf-8">
   <title>フォーム作成</title>
 
-  <!-- 住所検索 -->
-  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- <link rel="stylesheet" href="/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
   <script type="text/javascript" src="/js/address.js"></script>
-  <script type="text/javascript" src="/js/set_data.js.js"></script>
+  <script type="text/javascript" src="/js/set_data.js.js"></script> -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="js/address.js"></script>
+  <script type="text/javascript" src="js/set_data.js.js"></script>
 </head>
 
 <body>
   <div class="top">
     <h1>お店の内容を<br><span class="hbr">登録してください</span></h1>
     <a href="#">
-    <img src="images/logo.png" alt="ロゴ" class="logo">
-  </a>
+      <img src="images/logo.png" alt="ロゴ" class="logo">
+    </a>
 
     <img src="images/girl.png" alt="女のコ" class="girl">
 
@@ -28,7 +34,8 @@
 
 
     <div class="form_wrap">
-      <form class="" action="form.html" method="post" name="webmakeform" onsubmit="return check();">
+      <form class="" enctype="multipart/form-data" id="form" 　 action="/create/confirm-and-db-insert" method="post"
+        name="webmakeform" onsubmit="return check();">
 
         <div class="input">
           <label for="storename">店名<span class="require">必須</span></label>
@@ -250,17 +257,17 @@
 
               <div class="input">
                 <label for="menu_img">メニューの画像</label>
-                <input type="file" name="menu_img" value="" id="menu_img">
+                <input type="file" name="menu_img" value="" id="menu_img" class="menu_img">
               </div>
 
               <div class="input">
                 <label for="">値段</label> <br>
-                <input type="number" name="price" value="" placeholder="" maxlength="8">
+                <input type="number" name="price" value="" placeholder="" maxlength="8" class="price">
               </div>
 
               <div class="input">
                 <label for="">説明</label> <br>
-                <textarea name="menu_description" id="menu_description" class="ex_box"></textarea>
+                <textarea name="menu_description" id="menu_description" class="ex_box menu_ex"></textarea>
               </div>
               <hr>
             </div>
@@ -347,22 +354,25 @@
     </div>
 
     <!--メニュー-->
-    <div class="menu">
+    <div class="menu s_menu">
       <div class="h2" id="menu">
         <h2>MENU</h2>
       </div>
-      <div class="menu_image fadein">
-        <img src="images/tenpo05.jpg" alt="" class="menuimage">
+      <div class="s_menu_box">
+        <div class="menu_image fadein">
+          <img src="images/tenpo05.jpg" alt="" class="menuimage">
+        </div>
+        <ul class="s_menu_ul">
+          <!-- menu1 -->
+          <li class="fadein s_menu_li">
+            <!-- ↓ファイル名分からん -->
+            <a href="" rel="lightbox" title=""><img src="" alt=""></a>
+            <h3 class="s_menu_title"></h3>
+            <p class="s_menu_price"></p>
+            <p class="s_menu_ex"></p>
+          </li>
       </div>
-      <ul class="s_menu_ul">
-        <!-- menu1 -->
-        <li class="fadein s_menu_li">
-          <!-- ↓ファイル名分からん -->
-          <a href="" rel="lightbox" title=""><img src="" alt=""></a>
-          <h3 class="s_menu_title"></h3>
-          <p class="s_menu_ex"></p>
-        </li>
-        <!-- menu1 -->
+      <!-- menu1 -->
 
       </ul>
     </div>
@@ -552,7 +562,6 @@
     }
 
     //定休日取得
-
     var holiday = " ";
 
     for (var i = 0; i < document.webmakeform.regular_day_off.length; i++) {
@@ -604,14 +613,36 @@
     }
 
     //メニューhtml作成
+    var menu_name = [];
+    var menu_price = [];
+    var menu_ex = [];
     var menu_cnt = $(".menu_title").length;
-    menu_cnt = menu_cnt - 1;
-    savemenu = $(".s_menu_ul").html();
+    var savemenu = $(".s_menu_ul").html();
+
     for (var i = 0; i < menu_cnt; i++) {
-      $(".s_menu_ul").append(savemenu);
+      menu_name[i] = $('.menu_title').eq(i).val();
+      menu_price[i] = $('.price').eq(i).val();
+      menu_ex[i] = $('.menu_ex').eq(i).val();
+
     }
+    for (var i = 0; i < menu_cnt; i++) {
+      $(".s_menu_title").eq(0).html(menu_name[i]);
+      $(".s_menu_price").eq(0).html(menu_price[i]);
+      $(".s_menu_ex").eq(0).html(menu_ex[i]);
+
+      var tmp = $(".s_menu_box").eq(0).clone();
+      $(tmp).appendTo('.s_menu');
+
+    }
+    $(".s_menu_box").eq(0).remove();
+    
+
+
+
+
 
     //メニューの挿入（画像以外）
+
 
 
     //snshtml作成

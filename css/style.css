@@ -30,11 +30,11 @@ h1 {
   top: 38%;
   left: 15%;
   font-weight: bold;
-    line-height: 5vw;
-  
+  line-height: 5vw;
+
 }
 
-.hbr{
+.hbr {
   padding-left: 13vw;
 }
 
@@ -54,10 +54,11 @@ h1 {
   background-color: #fff;
   padding: 5vw 7vw 2vw 7vw;
   border-radius: .4vw;
-    box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
+  box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
 }
 
-.submit,.reset {
+.submit,
+.reset {
   margin: 70px auto 0 0;
   width: 200px;
   white-space: nowrap;
@@ -73,29 +74,32 @@ h1 {
 
 }
 
-.submit:hover,.reset:hover{
-  transform:scale(1.1,1.1);
+.submit:hover,
+.reset:hover {
+  transform: scale(1.1, 1.1);
 }
 
-.submit{
+.submit {
   margin-left: 10vw;
 }
 
-.submitbtn{
-text-align: center;
+.submitbtn {
+  text-align: center;
 }
 
 
-input[type="button"]:hover,input[type="submit"]{
+input[type="button"]:hover,
+input[type="submit"] {
   cursor: pointer;
 }
 
-label:not(.category1 label,.category2 label) {
+label:not(.category1 label, .category2 label) {
   font-weight: bold;
 }
 
-label{
-  font-size: 18px;;
+label {
+  font-size: 18px;
+  ;
 }
 
 .require {
@@ -140,13 +144,13 @@ input[type="checkbox"] {
   margin-right: 50px;
 }
 
-.category_wrap label{
+.category_wrap label {
   width: 100px;
 }
 
-.short{
+.short {
   width: 170px !important;
-  }
+}
 
 input[type="text"],
 input[type="number"],
@@ -154,15 +158,19 @@ input[type="email"],
 input[type="tel"],
 input[type="url"] {
   height: 50px;
-  width: 560px;
+  width: 55%;
   margin-top: 5px;
   font-size: 16px;
   padding-left: 10px;
 }
 
-textarea{
+textarea {
   padding: 10px;
   font-size: 16px;
+  height: 70px;
+  width: 55%;
+  color: #333;
+  border: 1px solid #ced4da;
 }
 
 input[type="number"] {
@@ -223,12 +231,13 @@ input[type="file"] {
   margin: auto 10px auto 10px;
 }
 
-input:focus,textarea:focus {
+input:focus,
+textarea:focus {
   border: solid 1px #11bead9d;
-  box-shadow:0 0 6px rgb(128, 128, 128);
+  box-shadow: 0 0 6px rgb(128, 128, 128);
 }
 
-hr{
+hr {
   display: block;
   height: 1px;
   background-color: #e6e9e8;
@@ -237,22 +246,19 @@ hr{
   margin-bottom: 10px;
   border: none;
 }
-.ex_box{
-  height: 70px;
-  width: 560px;
-  color: #333;
-  border: 1px solid #ced4da;
-}
 
-.top{
+
+
+.top {
   width: 100vw;
-  height: 80vh;
+  height: 40vw;
   position: relative;
   /* margin-bottom: 24vh; */
 
 
 }
-.logo{
+
+.logo {
   position: absolute;
   width: 6vw;
   top: 1vh;
@@ -260,7 +266,7 @@ hr{
 
 }
 
-.girl{
+.girl {
   height: 22vw;
   position: absolute;
   right: 20%;
