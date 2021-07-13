@@ -467,9 +467,12 @@
     menucnt++;
 
     $(document).ready(function () {
-      $(".menu_box"). //#each_rootを取得
-      clone(true). //上で取得した中身をコピー
-      insertBefore(".menupbtn"); //#rootsに追加
+      var clone=$(".menu_box").eq(0).clone(true);
+      clone.find(".menu_title").val("");
+      clone.find(".price").val("");
+      clone.find(".menu_ex").val("");
+      clone.find(".menu_img").val("");
+      clone.insertBefore(".menupbtn"); //#rootsに追加
     });
 
   })
