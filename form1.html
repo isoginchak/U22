@@ -257,7 +257,7 @@
 
               <div class="input">
                 <label for="menu_img">メニューの画像</label>
-                <input type="file" name="menu_img" value="" id="menu_img" class="menu_img">
+                <input type="file" name="menu_img" value="" id="menu_img" class="menu_img" accept=".png,.jpeg,.jpg">
               </div>
 
               <div class="input">
@@ -277,12 +277,12 @@
 
         <div class="input">
           <label for="">ロゴの画像</label>
-          <input type="file" name="logo_img" value="" id="">
+          <input type="file" name="logo_img" value="" id="" accept=".png,.jpeg,.jpg">
         </div>
 
         <div class="input">
           <label for="">店内画像</label>
-          <input type="file" name="shop_img" value="" id="">
+          <input type="file" name="shop_img" value="" id="" accept=".png,.jpeg,.jpg">
         </div>
 
         <div class="input">
@@ -453,18 +453,25 @@
     if (snscnt == 5) {
       snscnt--;
     } else {
-      $("#sns"). //#each_rootを取得
-      clone(true). //上で取得した中身をコピー
-      insertBefore(".snspbtn"); //#rootsに追加
+      $(document).ready(function () {
+        var clone = $(".sns_box").eq(0).clone(true);
+        clone.children("slectbox").selectedIndex = -1;
+        clone.find(".sns_url").val("");
+        clone.insertBefore(".snspbtn"); //#rootsに追加
+      });
 
     }
   })
 
   $('.menupbtn').on('click', function () {
     menucnt++;
-    $("#menu"). //#each_rootを取得
-    clone(true). //上で取得した中身をコピー
-    insertBefore(".menupbtn"); //#rootsに追加
+
+    $(document).ready(function () {
+      $(".menu_box"). //#each_rootを取得
+      clone(true). //上で取得した中身をコピー
+      insertBefore(".menupbtn"); //#rootsに追加
+    });
+
   })
 
 
