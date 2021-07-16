@@ -73,7 +73,7 @@
 
 
         <div class="input">
-          <label for="addressnum">郵便番号<span class="require">必須</span></label> <br>
+          <label for="addressnum">郵便番号<span class="require">必須</span>　(ハイフン不要)</label> <br>
           <input type="number" name="postal_code" maxlength="8" value="" placeholder="" id="addressnum" required>
           <button type="button" class="js-button" href="#">住所検索</button>
         </div>
@@ -262,7 +262,7 @@
 
               <div class="input">
                 <label for="">値段</label> <br>
-                <input type="number" name="price" value="" placeholder="" maxlength="8" class="price">
+                <input type="number" name="price" value="" placeholder="" maxlength="8" class="price" min="0" oninput="this.value=Math.abs(this.value)">
               </div>
 
               <div class="input">
@@ -443,6 +443,7 @@
 
 </body>
 <script type="text/javascript" charset="UTF-8">
+
   function reset() {
     document.webmakeform.reset();
   }
@@ -454,10 +455,10 @@
       snscnt--;
     } else {
       $(document).ready(function () {
-        var clone = $(".sns_box").eq(0).clone(true);
+        var clone =$(".sns_box").eq(0).clone(true);
         clone.children("slectbox").selectedIndex = -1;
         clone.find(".sns_url").val("");
-        clone.insertBefore(".snspbtn"); //#rootsに追加
+        clone.insertBefore(".snspbtn"); 
       });
 
     }
@@ -467,7 +468,7 @@
     menucnt++;
 
     $(document).ready(function () {
-      var clone=$(".menu_box").eq(0).clone(true);
+      var clone = $(".menu_box").last().clone(true);
       clone.find(".menu_title").val("");
       clone.find(".price").val("");
       clone.find(".menu_ex").val("");
