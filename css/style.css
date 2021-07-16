@@ -76,7 +76,8 @@ h1 {
 
 .submit:hover,
 .reset:hover {
-  transform: scale(1.1, 1.1);
+  background-color: #11AABD;
+  border-color: #11AABD;
 }
 
 .submit {
